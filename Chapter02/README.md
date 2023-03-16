@@ -102,3 +102,20 @@ text1.common_contexts(["benevolent", "fish"])
 ```
 > a_man<br>
 No common contexts were found
+
+It is one thing to automatically detect that a particular word occurs in a text, and to display some words that appear in the same context. 
+
+However, we can also determine the location of a word in the text: how many words from the beginning it appears. This positional information can be displayed using a dispersion plot. Each stripe represents an instance of a word, and each row represents the entire text.
+
+```py
+text4.dispersion_plot(["citizens", "democracy", "freedom", "duties", "America"])
+```
+> ![image](https://user-images.githubusercontent.com/19381768/225634659-32d42399-a113-46f1-8f7f-706fb018f790.png)
+
+Try more words (e.g., liberty, constitution), and different texts. 
+```py
+text4.dispersion_plot(["liberty", "nation", "constitution", "kindness", "pope"])
+```
+> ![image](https://user-images.githubusercontent.com/19381768/225634799-447cdb08-d580-4b70-bc4e-73dde4be1ed1.png)
+
+For these plots to work, it is assumed that ```numpy``` and ```matplotlib``` are installed.
