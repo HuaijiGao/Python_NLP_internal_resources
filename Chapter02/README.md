@@ -1,12 +1,12 @@
 # NLTK, Spacy and Visualization Techniques
 
-## NLTK
+# NLTK
 
 NLTK is one of the major NLP packages in Python. It is targeted at learners rather than being a production library which makes a good starting point for our purposes.
 
 The first step is to import nltk then make sure that all the necessary files are downloaded.
 
-```python
+```py
 import nltk
 nltk.download("all", quiet=True)
 ```
@@ -17,7 +17,7 @@ NLTK offers a special module called "book" which can be imported using `from nlt
 
 After printing a welcome message, it loads the text of several books (this will take a few seconds).
 
-```python
+```py
 from nltk.book import *
 ```
 > *** Introductory Examples for the NLTK Book ***<br>
@@ -32,6 +32,23 @@ text5: Chat Corpus<br>
 text6: Monty Python and the Holy Grail<br>
 text7: Wall Street Journal<br>
 text8: Personals Corpus<br>
-text9: The Man Who Was Thursday by G . K . Chesterton 1908<br>
-</details>
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
 
+This module contains a number of Corpora that are ready to practice on. The Corpora are named: *text1* - *text9*
+
+```python
+text1
+```
+> <Text: Moby Dick by Herman Melville 1851>
+```python
+text2
+```
+> <Text: Sense and Sensibility by Jane Austen 1811>
+
+## Searching Text
+There are many ways to examine the context of a text apart from simply reading it. **A concordance view shows us every occurrence of a given word, together with some context**.
+
+```py
+text1.concordance("true")
+```
+> <img width="678" alt="image" src="https://user-images.githubusercontent.com/19381768/225631465-a0154cef-b5a8-4b48-9ef0-1a1d55a3d173.png">
