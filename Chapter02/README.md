@@ -119,3 +119,30 @@ text4.dispersion_plot(["liberty", "nation", "constitution", "kindness", "pope"])
 > ![image](https://user-images.githubusercontent.com/19381768/225634799-447cdb08-d580-4b70-bc4e-73dde4be1ed1.png)
 
 For these plots to work, it is assumed that ```numpy``` and ```matplotlib``` are installed.
+
+## Counting Vocabulary
+The most obvious fact about texts that emerges from the preceding examples is that they differ in the vocabulary they use. 
+
+Let's begin by finding out the length of a text from start to finish, in terms of the words and punctuation symbols that appear. 
+
+Let's find the number of words in the book of Genensis:
+
+```py
+len(text3)
+```
+> 44764
+
+So Genesis has 44,764 words and punctuation symbols, or "tokens." 
+
+This includes duplicate tokens. To find the number of unique words, we use the ```set``` data structure as follows, and to get a sorted set, we use the Python ```sorted()``` function:
+
+```py
+# print(set(text3))
+# print(sorted(set(text3)))
+len(set(text3))
+```
+> 2789
+
+
+
+
