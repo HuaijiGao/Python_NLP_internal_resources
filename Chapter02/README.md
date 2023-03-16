@@ -110,13 +110,13 @@ However, we can also determine the location of a word in the text: how many word
 ```py
 text4.dispersion_plot(["citizens", "democracy", "freedom", "duties", "America"])
 ```
-> ![image](https://user-images.githubusercontent.com/19381768/225634659-32d42399-a113-46f1-8f7f-706fb018f790.png)
+> <img width="426" alt="image" src="https://user-images.githubusercontent.com/19381768/225637587-b4048b29-8e5a-4dd5-aa74-8634b325a123.png">
 
 Try more words (e.g., liberty, constitution), and different texts. 
 ```py
 text4.dispersion_plot(["liberty", "nation", "constitution", "kindness", "pope"])
 ```
-> ![image](https://user-images.githubusercontent.com/19381768/225634799-447cdb08-d580-4b70-bc4e-73dde4be1ed1.png)
+> <img width="429" alt="image" src="https://user-images.githubusercontent.com/19381768/225637672-36093c7d-c66a-493e-a50f-9aa643674a2a.png">
 
 For these plots to work, it is assumed that ```numpy``` and ```matplotlib``` are installed.
 
@@ -143,6 +143,53 @@ len(set(text3))
 ```
 > 2789
 
+Although it has 44,764 tokens, this book has only 2,789 distinct words, or "word types." 
 
+Now, let's calculate a measure of the lexical richness of the text. The next example shows us that the number of distinct words is just 6% of the total number of words, or equivalently that each word is used 16 times on average.
 
+```py
+print(len(set(text3)) / len(text3))
+print(len(text3)/len(set(text3)))
+```
+> 0.06230453042623537<br>
+16.050197203298673
 
+Next, let's focus on particular words. We can count how often a word occurs in a text, and compute what percentage of the text is taken up by a specific word:
+
+```py
+text3.count("smote")
+```
+> 5
+```py
+100 * text4.count("a") / len(text4)
+```
+> 1.457806031353621
+
+Your Turn: How many times does the word *lol* appear in text5? How much is this as a percentage of the total number of words in this text?
+
+```py
+100 * text5.count("lol") / len(text5)
+```
+> 1.5640968673628082
+
+To simplify things, let's create a functions for calculating lexical diversity
+
+```py
+def lexical_diversity(text):
+  return len(set(text)) / len(text)
+
+def percentage(count, total):
+  return 100 * count / total
+```
+
+We can go ahead and use these functions, let's find the number of tokens, the number of types, the lexical diversity for for the for the following:
+
+```py
+from nltk.corpus import brown
+
+print(f"The type of brown is: {type(brown)}")
+
+len(brown.words()), len(set(brown.words())), lexical_diversity(brown.words())
+```
+> The type of brown is: <class 'nltk.corpus.util.LazyCorpusLoader'><br>
+(1161192, 56057, 0.048275392872152066)
