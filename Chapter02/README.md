@@ -6,7 +6,7 @@ NLTK is one of the major NLP packages in Python. It is targeted at learners rath
 
 The first step is to import nltk then make sure that all the necessary files are downloaded.
 
-```
+```python
 import nltk
 nltk.download("all", quiet=True)
 ```
