@@ -52,3 +52,53 @@ There are many ways to examine the context of a text apart from simply reading i
 text1.concordance("true")
 ```
 > <img width="678" alt="image" src="https://user-images.githubusercontent.com/19381768/225631465-a0154cef-b5a8-4b48-9ef0-1a1d55a3d173.png">
+
+Try it yourself. Let's find more about the words: ["often", "test", "extreme"] is text2
+
+```py
+text2.concordance("often")
+```
+
+> <img width="677" alt="image" src="https://user-images.githubusercontent.com/19381768/225632238-8307ac65-6d6b-4c97-8332-e6320cabe7d1.png">
+
+A concordance permits us to see words in context. For example, we saw that monstrous occurred in contexts such as the \_\_\_ pictures and a \_\_\_ size . 
+
+What other words appear in a similar range of contexts? We can find out by appending the term similar to the name of the text in question, then inserting the relevant word in parentheses:
+
+```py
+text1.similar("monstrous")
+```
+
+> true contemptible christian abundant few part mean careful puzzled mystifying passing curious loving wise doleful gamesome singular delightfully perilous fearless
+
+```py
+text2.similar("monstrous")
+```
+
+> very so exceedingly heartily a as good great extremely remarkably sweet vast amazingly
+
+Observe that we get different results for different texts. Austen uses this word quite differently from Melville; for her, monstrous has positive connotations, and sometimes functions as an intensifier like the word very.
+
+The method `common_contexts` allows us to examine just the contexts that are shared by two or more words, such as monstrous and very. 
+
+```py
+text2.common_contexts(["monstrous", "very"])
+```
+> am_glad a_pretty a_lucky is_pretty be_glad
+
+Your Turn: pick another pair of words and compare their usage in two different texts, using the ```similar()``` and ```common_contexts()``` functions.
+
+```py
+text1.similar("benevolent")
+```
+> all out long allusions sung many thou wine one full eyes much sunrise also some king sixty man progress gills
+
+```py
+# find the common contexts in which the words: great and dangerous are used in text1
+text1.common_contexts(["great", "dangerous"])
+
+# find the common contexts in which the words: benevolent and fish are used in text1
+text1.common_contexts(["benevolent", "fish"])
+```
+> a_man<br>
+No common contexts were found
