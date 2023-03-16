@@ -20,7 +20,6 @@ After printing a welcome message, it loads the text of several books (this will 
 ```python
 from nltk.book import *
 ```
-<details>Output:
 > *** Introductory Examples for the NLTK Book ***<br>
 Loading text1, ..., text9 and sent1, ..., sent9<br>
 Type the name of the text or sentence to view it.<br>
