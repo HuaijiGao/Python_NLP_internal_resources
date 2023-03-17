@@ -222,3 +222,6 @@ Since we often need frequency distributions in language processing, NLTK provide
 fdist1 = FreqDist(text1) 
 print(fdist1) 
 ```
+> <FreqDist with 19317 samples and 260819 outcomes>
+
+
