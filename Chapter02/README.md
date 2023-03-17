@@ -224,4 +224,16 @@ print(fdist1)
 ```
 > <FreqDist with 19317 samples and 260819 outcomes>
 
-
+```py
+fdist1.most_common(10)
+```
+> [(',', 18713),<br>
+ ('the', 13721),<br>
+ ('.', 6862),<br>
+ ('of', 6536),<br>
+ ('and', 6024),<br>
+ ('a', 4569),<br>
+ ('to', 4542),<br>
+ (';', 4072),<br>
+ ('in', 3916),<br>
+ ('that', 2982)]
