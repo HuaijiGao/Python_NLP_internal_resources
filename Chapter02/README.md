@@ -20,19 +20,21 @@ After printing a welcome message, it loads the text of several books (this will 
 ```py
 from nltk.book import *
 ```
-> *** Introductory Examples for the NLTK Book ***<br>
-Loading text1, ..., text9 and sent1, ..., sent9<br>
-Type the name of the text or sentence to view it.<br>
-Type: 'texts()' or 'sents()' to list the materials.<br>
-text1: Moby Dick by Herman Melville 1851<br>
-text2: Sense and Sensibility by Jane Austen 1811<br>
-text3: The Book of Genesis<br>
-text4: Inaugural Address Corpus<br>
-text5: Chat Corpus<br>
-text6: Monty Python and the Holy Grail<br>
-text7: Wall Street Journal<br>
-text8: Personals Corpus<br>
+```
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
 text9: The Man Who Was Thursday by G . K . Chesterton 1908
+```
 
 This module contains a number of Corpora that are ready to practice on. The Corpora are named: *text1* - *text9*
 
