@@ -218,3 +218,7 @@ Imagine how you might go about finding the 50 most frequent words of a book.
 
 Since we often need frequency distributions in language processing, NLTK provides built-in support for them. Let's use a ```FreqDist()``` to find the 50 most frequent words of Moby Dick:
 
+```py
+fdist1 = FreqDist(text1) 
+print(fdist1) 
+```
