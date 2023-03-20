@@ -1,4 +1,4 @@
-# Python_NLP_internal_resources
+# Learning NLP in Python
 
 ![image](https://user-images.githubusercontent.com/19381768/226331235-159d557f-cdd1-4468-9198-4a053bd728d3.png)
 
