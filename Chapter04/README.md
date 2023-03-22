@@ -1,6 +1,6 @@
 # Text Classification I
 
-## Naive Bayes and Sentiment Classification
+# Naive Bayes and Sentiment Classification
  
 In this tutorial, we will focus on the topic of sentiment classification and how it can be achieved using the Naive Bayes classifier.
 
