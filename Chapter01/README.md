@@ -1,6 +1,6 @@
-# Introduction to NLP
+# Introduction to Natural Language Processing
 
-## Natural Language Processing (NLP)
+# Natural Language Processing (NLP)
 **Definition**: NLP is a set of methods for making human language accessible to computers.
 
 **Goals**: Enable computers to handle human language tasks such as email management, library research, and communication.
@@ -18,8 +18,8 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
    1. Statistical
    2. Machine learning
    3. Deep learning
-  
-## Probability in NLP
+
+# Probability in NLP
 **Probability** is the mathematical language for quantifying uncertainty.
 
 **Basic Concepts:**
@@ -45,7 +45,7 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
 |:--:|
 |Venn Diagrams|
 
-## NLP and Related Fields
+### NLP and Related Fields
 NLP is rooted in fields such as computational linguistics, machine learning, artificial intelligence, computer science, speech processing, ethics, and others.
 
 ## Human Language: Levels of Meaning
