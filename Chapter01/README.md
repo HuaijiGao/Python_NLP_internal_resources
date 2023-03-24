@@ -45,7 +45,7 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
 |:--:|
 |Venn Diagrams|
 
-### NLP and Related Fields
+# NLP and Related Fields
 NLP is rooted in fields such as computational linguistics, machine learning, artificial intelligence, computer science, speech processing, ethics, and others.
 
 ## Human Language: Levels of Meaning
