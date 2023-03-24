@@ -1,5 +1,9 @@
 # Introduction to Natural Language Processing
 
+|Table of Sections|
+|---|
+||
+
 # Natural Language Processing (NLP)
 **Definition**: NLP is a set of methods for making human language accessible to computers.
 
