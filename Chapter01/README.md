@@ -26,7 +26,7 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
 ## Probability in NLP
 **Probability** is the mathematical language for quantifying uncertainty.
 
-**Basic Concepts:**
+### Basic Concepts:
 - **Experiment**: Process of obtaining an observation or measurement.
 - **Simple Event**: Outcome observed on a single repetition of the experiment.
 - **Sample Space (Ω)**: Set of all simple events of an experiment.
