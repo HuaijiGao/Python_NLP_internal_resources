@@ -17,3 +17,21 @@ There are several successful NLP applications and systems, such as search engine
 
 ## NLP Use Cases
 NLP can be used to recognize and predict diseases based on electronic health records and patient's speech, perform sentiment analysis to understand customers' preferences, filter and classify emails, detect fake news, provide voice interfaces, track news and comments for financial traders, select talent recruitment, automate routine litigation tasks, and more.
+
+## NLP and Related Fields
+NLP is rooted in many fields, such as computational linguistics, machine learning, artificial intelligence, computer science, speech processing, ethics, and others, including computational social science, digital humanities, probabilistic topic models, information retrieval, and text mining.
+
+## Human Language: Levels of Meaning
+Human language consists of several levels of meaning, including discourse, pragmatics, semantics, syntax, lexemes, morphology, phonetics (phonology), and orthography.
+
+## NLP Approaches
+NLP approaches include rule-based, data-driven (statistical, machine learning, and deep learning).
+
+## The History of NLP
+The idea of computers understanding natural language has been a staple of science fiction since the first half of the twentieth century. The 1990s witnessed the adoption of statistical methods for NLP. In 2010, the success of deep learning on computer vision tasks spread to NLP tasks as well.
+
+## Probability
+Probability is the mathematical language for quantifying uncertainty, measuring the chance that something will happen. It's the proportion of observations where a given outcome happens, and it's used to quantify the strength of belief that something is true.
+
+## Basic Concepts
+An experiment is the process by which an observation is obtained, and a simple event is the outcome observed on a single repetition of the experiment. The set of all simple events of an experiment is called the sample space. An event is a collection of one or more simple events. Two events are mutually exclusive if, when one event occurs, the other cannot, and vice versa.
