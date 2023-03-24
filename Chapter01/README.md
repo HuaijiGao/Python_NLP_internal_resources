@@ -4,7 +4,7 @@
 |---|
 |:herb:  [Natural Language Processing (NLP)](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#natural-language-processing-nlp)<br>:herb:  [Probability in NLP](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#probability-in-nlp)<br>:herb:  [NLP and Related Fields](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#nlp-and-related-fields)|
 
-# Natural Language Processing (NLP)
+## Natural Language Processing (NLP)
 **Definition**: NLP is a set of methods for making human language accessible to computers.
 
 **Goals**: Enable computers to handle human language tasks such as email management, library research, and communication.
@@ -13,17 +13,17 @@
 
 **Applications**: Search engines, translation, spam filtering, smart assistants, sentiment analysis, emotion detection, chatbots, speech recognition, text generation, and more.
 
-## Ambiguity in Language
+### Ambiguity in Language
 Ambiguity occurs when sentences or phrases have multiple interpretations. Resolving ambiguity requires knowledge of the world and common sense reasoning.
 
-## NLP Approaches
+### NLP Approaches
 1. Rule-based
 2. Data-driven
    1. Statistical
    2. Machine learning
    3. Deep learning
 
-# Probability in NLP
+## Probability in NLP
 **Probability** is the mathematical language for quantifying uncertainty.
 
 **Basic Concepts:**
@@ -32,11 +32,11 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
 - **Sample Space (Ω)**: Set of all simple events of an experiment.
 - **Event**: Collection of one or more simple events.
 
-## Event Relations:
+### Event Relations:
 - **Union (A ⋃ B)**: Event that either A or B or both occur.
 - **Intersection (A ⋂ B)**: Event that both A and B occur.
 
-## Probability Rules & Relations of Events:
+### Probability Rules & Relations of Events:
 
 - Complement Event: $P(A^C) = 1-P(A)$
 - Additive Rule: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
@@ -49,10 +49,10 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
 |:--:|
 |Venn Diagrams|
 
-# NLP and Related Fields
+## NLP and Related Fields
 NLP is rooted in fields such as computational linguistics, machine learning, artificial intelligence, computer science, speech processing, ethics, and others.
 
-## Human Language: Levels of Meaning
+### Human Language: Levels of Meaning
 ***Discourse -> Pragmatics -> Semantics -> Syntax -> Lexemes -> Morphology -> Phonetics (Phonology) and Orthography***
 
 Human language can be analyzed at several levels to understand and process its meaning. These levels are:
@@ -67,10 +67,10 @@ Human language can be analyzed at several levels to understand and process its m
 
 Understanding and processing human language at these different levels is essential for effective natural language processing. NLP algorithms and techniques often focus on one or more of these levels, depending on the specific task or application.
 
-## NLP as a Field
+### NLP as a Field
 NLP sits at the intersection of computer science and linguistics.
 
-## Course Outline
+### Course Outline
 1. Basic text processing techniques
 2. Topic modeling
 3. Text classification and sentiment analysis
