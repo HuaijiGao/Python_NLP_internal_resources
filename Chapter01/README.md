@@ -35,3 +35,20 @@ Probability is the mathematical language for quantifying uncertainty, measuring 
 
 ## Basic Concepts
 An experiment is the process by which an observation is obtained, and a simple event is the outcome observed on a single repetition of the experiment. The set of all simple events of an experiment is called the sample space. An event is a collection of one or more simple events. Two events are mutually exclusive if, when one event occurs, the other cannot, and vice versa.
+
+## The probability of an Event
+- The probability of an event A measures “how often” we think A will occur. We write P(A).
+- Suppose that an experiment is performed n times. The relative frequency for an event A is
+
+$\frac{\text{Number of times A occurs } f}{n} = \frac{f}{n}$
+
+- If we let n get infinitely large, $P(A) = \lim_{n\rightarrow\infty}\frac{f}{n}$
+- $P(A)$ must be between 0 and 1.
+  - If event A can never occur, $P(A) = 0$.
+  - If event A always occurs, $P(A) = 1$.
+- The sum of the probabilities for all simple events in $\Omega$ equals 1. $P(\Omega) = 1$.
+- The probability of an event A can be found by adding the probabilities of all the simple events in A.
+
+## Event Relations
+- The union of two events, A and B, is the event that either A or B or both occur when the experiment is performed. We write $A \cup B$.
+- The intersection of two events, A and B, is the event that both A and B occur. We write $A \cap B$.
