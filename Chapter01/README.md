@@ -2,7 +2,7 @@
 
 |Table of Sections|
 |---|
-|:star: [Natural Language Processing (NLP)](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#natural-language-processing-nlp)<br>:star: [Probability in NLP](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#probability-in-nlp)<br>:star: [NLP and Related Fields](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#nlp-and-related-fields)|
+|:herb:  [Natural Language Processing (NLP)](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#natural-language-processing-nlp)<br>:herb:  [Probability in NLP](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#probability-in-nlp)<br>:herb:  [NLP and Related Fields](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter01/README.md#nlp-and-related-fields)|
 
 # Natural Language Processing (NLP)
 **Definition**: NLP is a set of methods for making human language accessible to computers.
