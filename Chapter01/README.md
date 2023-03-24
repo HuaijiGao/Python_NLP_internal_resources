@@ -43,7 +43,7 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
 
 |![image](https://user-images.githubusercontent.com/19381768/227531466-ecdaf113-06f1-4fe1-bd12-e9774c3b8116.png)|
 |:--:|
-|A Venn Diagram|
+|Venn Diagrams|
 
 ## NLP and Related Fields
 NLP is rooted in fields such as computational linguistics, machine learning, artificial intelligence, computer science, speech processing, ethics, and others.
