@@ -64,48 +64,26 @@ $P(A \cup B) = P(A) + P(B) − P(A \cap B)$
 ## Conditional Probabilities
 The probability that A occurs, given that event B has occurred, is called the conditional probability of A given B and is defined as:
 
-�
-(
-�
-∣
-�
-)
-=
-�
-(
-�
-∩
-�
-)
-�
-(
-�
-)
-if 
-�
-(
-�
-)
-≠
-0
-P(A∣B)= 
-P(B)
-P(A∩B)
-​
- if P(B)
-
-=0
+$P(A|B) = \frac{P(A \cap B)}{P(B)}$ if $P(B) \neq 0$
 
-Probabilities for Intersections
+## Probabilities for Intersections
 The rule for calculating $P(A \cap B)$ depends on the idea of independent and dependent events.
 
 Two events, A and B, are said to be independent if and only if the probability that event A occurs is not changed by the occurrence of event B, or vice versa.
 
 Defining Independence
-We can redefine independence in terms of conditional probabilities:
-Two events A and B are independent if and only if $P(A|B) = P(A)$ or $P(B|A) = P(B)$. Otherwise, they are dependent.
-Once you’ve decided whether or not two events are independent, you can use the following rule to calculate their intersection.
-Multiplicative Rule for Intersections
-For any two events, A and B, the probability that both A and B occur is $P(A \cap B) = P(B)P(A|B)$.
-If the events A and B are independent, then the probability that both A and B occur is $P(A \cap B) = P(A)P(B)$.
+- We can redefine independence in terms of conditional probabilities:
+- Two events A and B are independent if and only if $P(A|B) = P(A)$ or $P(B|A) = P(B)$. Otherwise, they are dependent.
+- Once you’ve decided whether or not two events are independent, you can use the following rule to calculate their intersection.
 
+## Multiplicative Rule for Intersections
+- For any two events, A and B, the probability that both A and B occur is $P(A \cap B) = P(B)P(A|B)$.
+- If the events A and B are independent, then the probability that both A and B occur is $P(A \cap B) = P(A)P(B)$.
+
+## Probability Rules & Relations of Events
+- Complement Event:  $P(A^C) = 1-P(A)$
+- Additive Rule: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+- Multiplicative Rule: $P(A \cap B) = P(A)P(B|A)$
+- Conditional probability: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+- Mutually Exclusive Events: $P(A \cap B) = 0$, $P(A \cup B) = P(A) + P(B)$
+- Independent Events: $P(A \cap B) = P(A)P(B)$, $P(A|B)=P(A)$, $P(A \cap B \cap C)=P(A)P(B)P(C)$
