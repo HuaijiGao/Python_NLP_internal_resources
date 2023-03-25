@@ -131,11 +131,7 @@ We want to tokenize this corpus using BPE with two (k=2) merges.
 |STEP2| Find the most frequent pair of adjacent characters in the corpus:<br>In this case, the most frequent pair is `aa`, which occurs four times.|
 |STEP3| Merge the most frequent pair and add it to the vocabulary:<br>Merge `aa` into `A` (we use a capital letter for clarity, but it could be any symbol not yet in the vocabulary). The vocabulary now becomes:<br> `a, b, c, d, A`|
 |STEP4|Replace all occurrences of the merged pair with the new symbol in the corpus:<br>The corpus now becomes: `AbdaAbac`|
-
-Now we have completed the first merge. Since we set k=2, we need to do one more merge.
-
-|STEPS| Cont'd|
-|--|--|
+| |Now we have completed the first merge. Since we set k=2, we need to do one more merge.|
 |STEP5| Find the most frequent pair of adjacent characters in the updated corpus:<br>In this case, the most frequent pair is `Ab`, which occurs twice.|
 |STEP6|Merge the most frequent pair and add it to the vocabulary:<br>Merge `Ab` into `B`. The vocabulary now becomes:<br>`a, b, c, d, A, B`|
 |STEP7|Replace all occurrences of the merged pair with the new symbol in the corpus:<br>The corpus now becomes: `BdaBac`|
