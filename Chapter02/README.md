@@ -104,9 +104,9 @@
 - Each one represents a meaning unit called a morpheme
 - Deciding what counts as a word is complex and not agreed upon
 
-|![image](https://user-images.githubusercontent.com/19381768/227709043-ceb36f2e-c637-4b98-828b-ab228683df39.png)|
+|![image](https://user-images.githubusercontent.com/19381768/227710730-771e0bbf-e1ef-4e5b-997d-9ccd9b575e76.png)|
 |:--:|
-|Word tokenization examples in Chinese|
+|Word tokenization example in Chinese|
 
 ### :seedling: Tokenization Techniques
 1. White space and punctuation tokenization
