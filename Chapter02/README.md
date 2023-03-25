@@ -1,242 +1,166 @@
-# NLTK, Spacy and Visualization Techniques
-
-# NLTK
-
-NLTK is one of the major NLP packages in Python. It is targeted at learners rather than being a production library which makes a good starting point for our purposes.
-
-The first step is to import nltk then make sure that all the necessary files are downloaded.
-
-```py
-import nltk
-nltk.download("all", quiet=True)
-```
-
-If you are running on your personal machine (not within Google colab), you only need to do this once.
-
-NLTK offers a special module called "book" which can be imported using `from nltk.book import *`
-
-After printing a welcome message, it loads the text of several books (this will take a few seconds).
-
-```py
-from nltk.book import *
-```
-```
-*** Introductory Examples for the NLTK Book ***
-Loading text1, ..., text9 and sent1, ..., sent9
-Type the name of the text or sentence to view it.
-Type: 'texts()' or 'sents()' to list the materials.
-text1: Moby Dick by Herman Melville 1851
-text2: Sense and Sensibility by Jane Austen 1811
-text3: The Book of Genesis
-text4: Inaugural Address Corpus
-text5: Chat Corpus
-text6: Monty Python and the Holy Grail
-text7: Wall Street Journal
-text8: Personals Corpus
-text9: The Man Who Was Thursday by G . K . Chesterton 1908
-
-```
-
-This module contains a number of Corpora that are ready to practice on. The Corpora are named: *text1* - *text9*
-
-```python
-text1
-```
-> <Text: Moby Dick by Herman Melville 1851>
-```python
-text2
-```
-> <Text: Sense and Sensibility by Jane Austen 1811>
-
-## Searching Text
-There are many ways to examine the context of a text apart from simply reading it. **A concordance view shows us every occurrence of a given word, together with some context**.
-
-```py
-text1.concordance("true")
-```
-> <img width="678" alt="image" src="https://user-images.githubusercontent.com/19381768/225631465-a0154cef-b5a8-4b48-9ef0-1a1d55a3d173.png">
-
-Try it yourself. Let's find more about the words: ["often", "test", "extreme"] is text2
-
-```py
-text2.concordance("often")
-```
-
-> <img width="677" alt="image" src="https://user-images.githubusercontent.com/19381768/225632238-8307ac65-6d6b-4c97-8332-e6320cabe7d1.png">
-
-A concordance permits us to see words in context. For example, we saw that monstrous occurred in contexts such as the \_\_\_ pictures and a \_\_\_ size . 
-
-What other words appear in a similar range of contexts? We can find out by appending the term similar to the name of the text in question, then inserting the relevant word in parentheses:
-
-```py
-text1.similar("monstrous")
-```
-
-> true contemptible christian abundant few part mean careful puzzled mystifying passing curious loving wise doleful gamesome singular delightfully perilous fearless
-
-```py
-text2.similar("monstrous")
-```
-
-> very so exceedingly heartily a as good great extremely remarkably sweet vast amazingly
-
-Observe that we get different results for different texts. Austen uses this word quite differently from Melville; for her, monstrous has positive connotations, and sometimes functions as an intensifier like the word very.
-
-The method `common_contexts` allows us to examine just the contexts that are shared by two or more words, such as monstrous and very. 
-
-```py
-text2.common_contexts(["monstrous", "very"])
-```
-> am_glad a_pretty a_lucky is_pretty be_glad
-
-Your Turn: pick another pair of words and compare their usage in two different texts, using the ```similar()``` and ```common_contexts()``` functions.
-
-```py
-text1.similar("benevolent")
-```
-> all out long allusions sung many thou wine one full eyes much sunrise also some king sixty man progress gills
-
-```py
-# find the common contexts in which the words: great and dangerous are used in text1
-text1.common_contexts(["great", "dangerous"])
-
-# find the common contexts in which the words: benevolent and fish are used in text1
-text1.common_contexts(["benevolent", "fish"])
-```
-> a_man<br>
-No common contexts were found
-
-It is one thing to automatically detect that a particular word occurs in a text, and to display some words that appear in the same context. 
-
-However, we can also determine the location of a word in the text: how many words from the beginning it appears. This positional information can be displayed using a dispersion plot. Each stripe represents an instance of a word, and each row represents the entire text.
-
-```py
-text4.dispersion_plot(["citizens", "democracy", "freedom", "duties", "America"])
-```
-> <img width="426" alt="image" src="https://user-images.githubusercontent.com/19381768/225637587-b4048b29-8e5a-4dd5-aa74-8634b325a123.png">
-
-Try more words (e.g., liberty, constitution), and different texts. 
-```py
-text4.dispersion_plot(["liberty", "nation", "constitution", "kindness", "pope"])
-```
-> <img width="429" alt="image" src="https://user-images.githubusercontent.com/19381768/225637672-36093c7d-c66a-493e-a50f-9aa643674a2a.png">
-
-For these plots to work, it is assumed that ```numpy``` and ```matplotlib``` are installed.
-
-## Counting Vocabulary
-The most obvious fact about texts that emerges from the preceding examples is that they differ in the vocabulary they use. 
-
-Let's begin by finding out the length of a text from start to finish, in terms of the words and punctuation symbols that appear. 
-
-Let's find the number of words in the book of Genensis:
-
-```py
-len(text3)
-```
-> 44764
-
-So Genesis has 44,764 words and punctuation symbols, or "tokens." 
-
-This includes duplicate tokens. To find the number of unique words, we use the ```set``` data structure as follows, and to get a sorted set, we use the Python ```sorted()``` function:
-
-```py
-# print(set(text3))
-# print(sorted(set(text3)))
-len(set(text3))
-```
-> 2789
-
-Although it has 44,764 tokens, this book has only 2,789 distinct words, or "word types." 
-
-Now, let's calculate a measure of the lexical richness of the text. The next example shows us that the number of distinct words is just 6% of the total number of words, or equivalently that each word is used 16 times on average.
-
-```py
-print(len(set(text3)) / len(text3))
-print(len(text3)/len(set(text3)))
-```
-> 0.06230453042623537<br>
-16.050197203298673
-
-Next, let's focus on particular words. We can count how often a word occurs in a text, and compute what percentage of the text is taken up by a specific word:
-
-```py
-text3.count("smote")
-```
-> 5
-```py
-100 * text4.count("a") / len(text4)
-```
-> 1.457806031353621
-
-Your Turn: How many times does the word *lol* appear in text5? How much is this as a percentage of the total number of words in this text?
-
-```py
-100 * text5.count("lol") / len(text5)
-```
-> 1.5640968673628082
-
-To simplify things, let's create a functions for calculating lexical diversity
-
-```py
-def lexical_diversity(text):
-  return len(set(text)) / len(text)
-
-def percentage(count, total):
-  return 100 * count / total
-```
-
-We can go ahead and use these functions, let's find the number of tokens, the number of types, the lexical diversity for for the for the following:
-
-```py
-from nltk.corpus import brown
-
-print(f"The type of brown is: {type(brown)}")
-
-len(brown.words()), len(set(brown.words())), lexical_diversity(brown.words())
-```
-> The type of brown is: <class 'nltk.corpus.util.LazyCorpusLoader'><br>
-(1161192, 56057, 0.048275392872152066)
-
-```py
-print(brown.raw()[:10])
-print(brown.words()[:10])
-print(brown.sents()[:2])
-print(brown.paras()[:2])
-```
-> 	The/at
-
-> ['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', 'Friday', 'an', 'investigation', 'of']
-
-> [['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', 'Friday', 'an', 'investigation', 'of', "Atlanta's", 'recent', 'primary', 'election', 'produced', '''', 'no', 'evidence', "''", 'that', 'any', 'irregularities', 'took', 'place', '.'], ['The', 'jury', 'further', 'said', 'in', 'term-end', 'presentments', 'that', 'the', 'City', 'Executive', 'Committee', ',', 'which', 'had', 'over-all', 'charge', 'of', 'the', 'election', ',', '''', 'deserves', 'the', 'praise', 'and', 'thanks', 'of', 'the', 'City', 'of', 'Atlanta', "''", 'for', 'the', 'manner', 'in', 'which', 'the', 'election', 'was', 'conducted', '.']]
-
-> [[['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', 'Friday', 'an', 'investigation', 'of', "Atlanta's", 'recent', 'primary', 'election', 'produced', '''', 'no', 'evidence', "''", 'that', 'any', 'irregularities', 'took', 'place', '.']], [['The', 'jury', 'further', 'said', 'in', 'term-end', 'presentments', 'that', 'the', 'City', 'Executive', 'Committee', ',', 'which', 'had', 'over-all', 'charge', 'of', 'the', 'election', ',', '''', 'deserves', 'the', 'praise', 'and', 'thanks', 'of', 'the', 'City', 'of', 'Atlanta', "''", 'for', 'the', 'manner', 'in', 'which', 'the', 'election', 'was', 'conducted', '.']]]
-
-## Computing with Language: Simple Statistics
-Now, we pick up the question of what makes a text distinct, and use automatic methods to find characteristic words and expressions of a text.
-
-### Frequency Distributions
-How can we automatically identify the words of a text that are most informative about the topic and genre of the text? 
-
-Imagine how you might go about finding the 50 most frequent words of a book.
-
-Since we often need frequency distributions in language processing, NLTK provides built-in support for them. Let's use a ```FreqDist()``` to find the 50 most frequent words of Moby Dick:
-
-```py
-fdist1 = FreqDist(text1) 
-print(fdist1) 
-```
-> <FreqDist with 19317 samples and 260819 outcomes>
-
-```py
-fdist1.most_common(10)
-```
-> [(',', 18713),<br>
- ('the', 13721),<br>
- ('.', 6862),<br>
- ('of', 6536),<br>
- ('and', 6024),<br>
- ('a', 4569),<br>
- ('to', 4542),<br>
- (';', 4072),<br>
- ('in', 3916),<br>
- ('that', 2982)]
+# NLP Basic Tasks I
+
+|Table of Sections|
+|---|
+|:herb:  [Regular Expressions (RegEx)](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter02/README.md#regular-expressions-regex)<br>:herb:  [Words and Corpora](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter02/README.md#words-and-corpora)<br>:herb:  [Word Tokenization](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter02/README.md#word-tokenization)<br>:herb:  [Word Normalization and Other Issues](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter02/README.md#word-normalization-and-other-issues)|
+
+## Regular Expressions (RegEx)
+### What are Regular Expressions?
+- A formal language for specifying text strings
+- Used to search for specific patterns in text
+
+### :seedling: Disjunctions
+- Letters inside square brackets `[]`
+- Ranges `[A-Z]`
+
+|Pattern|Matches|
+|--|--|
+|[wW]oodchuck	|Woodchuck, woodchuck|
+|[1234567890]|	Any digit|
+
+### :seedling: Negation in Disjunction
+- Negations `[^Ss]`
+- Carat `^` means negation only when first in `[]`
+
+### :seedling: More Disjunction
+- The pipe `|` for disjunction
+
+### :seedling: Special Characters: ? *+.
+- `?` Optional previous character
+- `*` 0 or more of the previous character
+- `+` 1 or more of the previous character
+- `.` Any single character
+
+### :seedling: Anchors ^ $
+- `^` Start of the line
+- `$` End of the line
+
+### :seedling: Errors
+1. False positives (Type I errors) - Matching strings that should not have been matched
+2. False negatives (Type II errors) - Not matching things that should have been matched
+
+### :seedling: Substitutions
+- Replace a pattern with another pattern
+- `s/regexp1/pattern/`
+
+### :seedling: Capture Groups
+- Use parentheses `()` to "capture" a pattern into a numbered register (1, 2, 3…)
+- Use `\1` to refer to the contents of the register
+
+### :seedling: Non-Capturing Groups
+- Add a `?`: after the parenthesis to create non-capturing groups
+
+### :seedling: Lookahead Assertions
+- `(?=pattern)` is true if pattern matches, but is zero-width; doesn't advance character pointer
+- `(?!pattern)` true if a pattern does not match
+
+|![image](https://user-images.githubusercontent.com/19381768/227708353-660fc62a-1c23-45fc-9a19-c3752c9df3a1.png)|
+|:--:|
+|Lookahead and Lookbehind|
+
+## Words and Corpora
+### :seedling: Tokens and Types
+- **Token**: an instance of a type in running text
+- **Type**: an element of the vocabulary
+
+### :seedling: Heaps Law (Herdan's Law)
+- |V| = $kN^{\beta}$ where often $0.67 < \beta < 0.75$
+- Vocabulary size grows with > square root of the number of word tokens
+
+### :seedling: Corpora
+- Texts produced by specific writers, in specific languages, varieties, and genres, for specific functions
+
+### :seedling: Corpus Dimensions
+- Language
+- Variety
+- Code switching
+- Genre
+- Author demographics
+
+### :seedling: Corpus Datasheets
+- Motivation
+- Situation
+- Collection process
+- Annotation process
+- Language variety
+- Speaker demographics
+
+## Word Tokenization
+### :seedling: Text Normalization
+1. Tokenizing (segmenting) words
+2. Normalizing word formats
+3. Segmenting sentences
+
+### :seedling: Issues in Tokenization
+- Can't just blindly remove punctuation
+- Handling clitics
+- Multiword expressions (MWE)
+
+### :seedling: Tokenization without spaces
+- Chinese, Japanese, Thai don't use spaces to separate words
+
+### :seedling: Word tokenization in Chinese
+- Chinese words are composed of characters called hanzi
+- Each one represents a meaning unit called a morpheme
+- Deciding what counts as a word is complex and not agreed upon
+
+|![image](https://user-images.githubusercontent.com/19381768/227709043-ceb36f2e-c637-4b98-828b-ab228683df39.png)|
+|:--:|
+|Word tokenization examples in Chinese|
+
+### :seedling: Tokenization Techniques
+1. White space and punctuation tokenization
+2. N-grams
+3. Byte Pair Encoding (BPE)
+
+### :seedling: Byte Pair Encoding Tokenization
+A third option for word segmentation
+- Use data to determine tokenization.
+- Subword tokenization (tokens are parts of words)
+- Can include common morphemes (smallest meaning-bearing unit in a language) like -est or -er.
+
+### :seedling: Subword tokenization
+- Three common algorithms:
+  - Byte-Pair Encoding (BPE)
+  - Unigram language modeling tokenization
+  - WordPiece
+- Two parts: token learner and token segmenter.
+
+### :seedling: Byte Pair Encoding (BPE)
+- Starts with a vocabulary of all individual characters.
+- Repeats k merges of the most frequent adjacent symbols in the training corpus, updating the vocabulary and corpus each time.
+
+### :seedling: BPE token learner algorithm
+- Function BYTE-PAIR ENCODING(strings C, number of merges k) returns vocab V
+- Merges are performed in order of frequency on training data.
+- Test frequencies do not play a role.
+
+## Word Normalization and Other Issues
+### :seedling: Word normalization
+- Putting words/tokens in a standard format.
+
+### :seedling: Case folding
+- Reducing all letters to lowercase (or uppercase).
+- Case can be helpful in sentiment analysis, machine translation, and information extraction.
+
+### :seedling: Lemmatization
+- Representing words as their shared root (dictionary headword form).
+- Requires morphological parsing.
+
+### :seedling: Morphemes and Morphological Parsing
+- **Morphemes**: small meaningful units that make up words.
+- **Stems**: core meaning-bearing units.
+- **Affixes**: parts that adhere to stems, often with grammatical functions.
+- **Morphological Parsers**: parse words into morphemes and their grammatical features.
+
+### :seedling: Stemming
+- Reducing terms to stems by crudely removing affixes.
+- Example: Porter Stemmer, based on a series of rewrite rules.
+
+### :seedling: Complex Morphology
+- Necessary for many languages, such as Turkish.
+
+### :seedling: Sentence Segmentation
+- Punctuation marks like ! and ? are less ambiguous than periods.
+- Common algorithm: decide whether a period is part of a word or a sentence-boundary marker.
+- Abbreviation dictionaries can help.

@@ -13,10 +13,10 @@
 
 **Applications**: Search engines, translation, spam filtering, smart assistants, sentiment analysis, emotion detection, chatbots, speech recognition, text generation, and more.
 
-### Ambiguity in Language
+### :seedling: Ambiguity in Language
 Ambiguity occurs when sentences or phrases have multiple interpretations. Resolving ambiguity requires knowledge of the world and common sense reasoning.
 
-### NLP Approaches
+### :seedling: NLP Approaches
 1. Rule-based
 2. Data-driven
    1. Statistical
@@ -26,17 +26,17 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
 ## Probability in NLP
 **Probability** is the mathematical language for quantifying uncertainty.
 
-### Basic Concepts:
+### :seedling: Basic Concepts:
 - **Experiment**: Process of obtaining an observation or measurement.
 - **Simple Event**: Outcome observed on a single repetition of the experiment.
 - **Sample Space (Ω)**: Set of all simple events of an experiment.
 - **Event**: Collection of one or more simple events.
 
-### Event Relations:
+### :seedling: Event Relations:
 - **Union (A ⋃ B)**: Event that either A or B or both occur.
 - **Intersection (A ⋂ B)**: Event that both A and B occur.
 
-### Probability Rules & Relations of Events:
+### :seedling: Probability Rules & Relations of Events:
 
 - Complement Event: $P(A^C) = 1-P(A)$
 - Additive Rule: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
@@ -52,7 +52,7 @@ Ambiguity occurs when sentences or phrases have multiple interpretations. Resolv
 ## NLP and Related Fields
 NLP is rooted in fields such as computational linguistics, machine learning, artificial intelligence, computer science, speech processing, ethics, and others.
 
-### Human Language: Levels of Meaning
+### :seedling: Human Language: Levels of Meaning
 ***Discourse -> Pragmatics -> Semantics -> Syntax -> Lexemes -> Morphology -> Phonetics (Phonology) and Orthography***
 
 Human language can be analyzed at several levels to understand and process its meaning. These levels are:
@@ -67,10 +67,10 @@ Human language can be analyzed at several levels to understand and process its m
 
 Understanding and processing human language at these different levels is essential for effective natural language processing. NLP algorithms and techniques often focus on one or more of these levels, depending on the specific task or application.
 
-### NLP as a Field
+### :seedling: NLP as a Field
 NLP sits at the intersection of computer science and linguistics.
 
-### Course Outline
+### :seedling: Tutorial Outline
 1. Basic text processing techniques
 2. Topic modeling
 3. Text classification and sentiment analysis
