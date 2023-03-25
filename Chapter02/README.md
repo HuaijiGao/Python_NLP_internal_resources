@@ -1,5 +1,9 @@
 # NLP Basic Tasks I
 
+|Table of Sections|
+|---|
+|:herb:  [Regular Expressions (RegEx)](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter02/README.md#regular-expressions-regex)<br>:herb:  [Words and Corpora](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter02/README.md#words-and-corpora)<br>:herb:  [Word Tokenization](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter02/README.md#word-tokenization)<br>:herb:  [Word Normalization and Other Issues](https://github.com/JefoGao/Resource_NLP-in-Python/blob/main/Chapter02/README.md#word-normalization-and-other-issues)|
+
 ## Regular Expressions (RegEx)
 ### What are Regular Expressions?
 - A formal language for specifying text strings
@@ -104,7 +108,6 @@
 |:--:|
 |Word tokenization examples in Chinese|
 
-## Tokenization
 ### :seedling: Tokenization Techniques
 1. White space and punctuation tokenization
 2. N-grams
