@@ -104,3 +104,60 @@
 |:--:|
 |Word tokenization examples in Chinese|
 
+## Tokenization
+### Tokenization Techniques
+1. White space and punctuation tokenization
+2. N-grams
+3. Byte Pair Encoding (BPE)
+
+### Byte Pair Encoding Tokenization
+A third option for word segmentation
+- Use data to determine tokenization.
+- Subword tokenization (tokens are parts of words)
+- Can include common morphemes (smallest meaning-bearing unit in a language) like -est or -er.
+
+### Subword tokenization
+- Three common algorithms:
+  - Byte-Pair Encoding (BPE)
+  - Unigram language modeling tokenization
+  - WordPiece
+- Two parts: token learner and token segmenter.
+
+### Byte Pair Encoding (BPE)
+- Starts with a vocabulary of all individual characters.
+- Repeats k merges of the most frequent adjacent symbols in the training corpus, updating the vocabulary and corpus each time.
+
+### BPE token learner algorithm
+- Function BYTE-PAIR ENCODING(strings C, number of merges k) returns vocab V
+- Merges are performed in order of frequency on training data.
+- Test frequencies do not play a role.
+
+## Word Normalization and Other Issues
+### Word normalization
+- Putting words/tokens in a standard format.
+
+### Case folding
+- Reducing all letters to lowercase (or uppercase).
+- Case can be helpful in sentiment analysis, machine translation, and information extraction.
+
+### Lemmatization
+- Representing words as their shared root (dictionary headword form).
+- Requires morphological parsing.
+
+### Morphemes and Morphological Parsing
+- **Morphemes**: small meaningful units that make up words.
+- **Stems**: core meaning-bearing units.
+- **Affixes**: parts that adhere to stems, often with grammatical functions.
+- **Morphological Parsers**: parse words into morphemes and their grammatical features.
+
+### Stemming
+- Reducing terms to stems by crudely removing affixes.
+- Example: Porter Stemmer, based on a series of rewrite rules.
+
+### Complex Morphology
+- Necessary for many languages, such as Turkish.
+
+### Sentence Segmentation
+- Punctuation marks like ! and ? are less ambiguous than periods.
+- Common algorithm: decide whether a period is part of a word or a sentence-boundary marker.
+- Abbreviation dictionaries can help.
