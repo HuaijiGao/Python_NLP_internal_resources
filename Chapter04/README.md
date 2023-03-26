@@ -189,7 +189,7 @@ c_MAP = argmax_c score(c)
 - Add features that count occurrences of words from lexicons (e.g., positive or negative words).
 - Dense lexicon features can help when training data is sparse or not representative of the test set.
 
-## Naïve Bayes in Other Tasks
+## Naïve Bayes Others
 
 ### Spam Filtering
 
@@ -201,7 +201,7 @@ c_MAP = argmax_c score(c)
 - Character n-grams perform well.
 - Train on a variety of language instances.
 
-## Naïve Bayes: Relationship to Language Modeling
+### Naïve Bayes: Relationship to Language Modeling
 
 - Each class is a unigram language model.
 - Assigning each word: $P(\text{word} | c)$
