@@ -155,7 +155,23 @@ for each word w_k in d
 ```
 c_MAP = argmax_c score(c)
 ```
+## Naïve Bayes Others
 
+### Spam Filtering
+
+- SpamAssassin Features: Mentions millions of dollars, From: starts with many numbers, Subject is all capitals, HTML has a low ratio of text to image area, "One hundred percent guaranteed", Claims you can be removed from the list.
+
+### Language Identification
+
+- Determine the language of a piece of text.
+- Character n-grams perform well.
+- Train on a variety of language instances.
+
+### Naïve Bayes: Relationship to Language Modeling
+
+- Each class is a unigram language model.
+- Assigning each word: $P(\text{word} | c)$
+- Assigning each sentence: $P(s|c)= \prod P(\text{word}|c)$
 
 ### Section Summary
 
@@ -188,24 +204,6 @@ c_MAP = argmax_c score(c)
 
 - Add features that count occurrences of words from lexicons (e.g., positive or negative words).
 - Dense lexicon features can help when training data is sparse or not representative of the test set.
-
-## Naïve Bayes Others
-
-### Spam Filtering
-
-- SpamAssassin Features: Mentions millions of dollars, From: starts with many numbers, Subject is all capitals, HTML has a low ratio of text to image area, "One hundred percent guaranteed", Claims you can be removed from the list.
-
-### Language Identification
-
-- Determine the language of a piece of text.
-- Character n-grams perform well.
-- Train on a variety of language instances.
-
-### Naïve Bayes: Relationship to Language Modeling
-
-- Each class is a unigram language model.
-- Assigning each word: $P(\text{word} | c)$
-- Assigning each sentence: $P(s|c)= \prod P(\text{word}|c)$
 
 ## Evaluation Metrics
 
