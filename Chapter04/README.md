@@ -144,5 +144,33 @@ for each word w_k in Vocabulary
 
 • Given a new document d, tokenize it into words
 • Calculate class scores using log probabilities
+```
+for each c_j in C do
+	score(c_j) = log(P(c_j))
+for each word w_k in d
+	score(c_j) += log(P(w_k|c_j))
+```
+
+• Choose the class with the highest score
+```
+c_MAP = argmax_c score(c)
+```
+
+
+### Summary
+
+1. Multinomial Naïve Bayes is a simple, powerful model for text classification
+2. Based on Bayes rule and the independence assumption
+3. Parameter estimation is done by counting word frequencies in the training set
+4. Laplace (add-1) smoothing is used to avoid zero probabilities
+5. Unknown words are ignored during classification
+6. The model can be easily trained and applied for classification using log probabilities to avoid underflow
+
+### Additional notes
+
+- Naïve Bayes can be applied to other types of data and not just text; the multinomial model is well-suited for text classification.
+- The independence assumption is a strong assumption, but the model still works well in practice, especially for text classification tasks.
+- It is a fast and efficient algorithm that can be easily scaled to large datasets.
+
 
 
