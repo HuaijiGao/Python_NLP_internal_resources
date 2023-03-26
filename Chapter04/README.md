@@ -1,35 +1,73 @@
-# Text Classification I
+# Chapter 04: NLP Text Classification I
 
-# Naive Bayes and Sentiment Classification
- 
-In this tutorial, we will focus on the topic of sentiment classification and how it can be achieved using the Naive Bayes classifier.
+## The Task of Text Classification
 
-## Why sentiment analysis?
-Sentiment analysis involves the detection of attitudes in text data, which can be useful in a variety of applications such as:
+### Text Classification: Definition
+- Input: a document $d$ and a fixed set of classes $C = {c_1, c_2, \cdots, c_J}$
+- Output: a predicted class $c \in C$
 
-- Movie reviews: determining if a review is positive or negative
-- Product reviews: understanding customer opinions about a product
-- Public sentiment: monitoring consumer confidence or political opinions
-- Prediction: predicting election outcomes or market trends based on sentiment
-- Basic Sentiment Classification
+### Text Classification Examples
+- Sentiment analysis
+- Spam detection
+- Authorship identification
+- Language Identification
+- Assigning subject categories, topics, or genres
 
-The goal of sentiment classification is to determine whether the attitude of a given text is positive or negative. This is a simple task that can be achieved using machine learning techniques such as the Naive Bayes classifier.
+## Classification Methods
 
-## Text Classification: Definition
-Text classification involves predicting a class label for a given document from a fixed set of classes. In the case of sentiment classification, the classes are positive and negative.
+### Hand-coded Rules
+- Rules based on combinations of words or other features
+- Accuracy can be high if rules carefully refined by an expert
+- Building and maintaining these rules is expensive
 
-## Hand-coded Rules
-One approach to text classification is to use hand-coded rules based on combinations of words or other features. While this approach can achieve high accuracy if the rules are carefully refined by an expert, it can be expensive to build and maintain.
+### Supervised Machine Learning
+- Input: a document $d$, a fixed set of classes $C = {c_1, c_2, \cdots, c_J}$, a training set of $m$ hand-labeled documents $(d_1,c_1), \cdots, (d_m,c_m)$
+- Output: a learned classifier $\gamma:d \rightarrow c$
+- Classifiers: Naïve Bayes, Logistic regression, Neural networks, k-Nearest Neighbors, etc.
 
-## Supervised Machine Learning
-Another approach to text classification is supervised machine learning, which involves training a classifier on a labeled dataset of documents and their corresponding class labels. Popular classifiers for sentiment classification include:
+## Naïve Bayes
 
-- Naive Bayes
-- Logistic regression
-- Neural networks
-- k-Nearest Neighbors
+### Naive Bayes Intuition
+- Simple classification method based on Bayes rule
+- Relies on the bag of words representation of documents
 
-## Naive Bayes Classifier
-The Naive Bayes classifier is a simple and effective probabilistic classifier that is widely used for text classification tasks such as sentiment analysis. The classifier is based on Bayes' theorem, which states that the probability of a hypothesis (such as a document belonging to a particular class) given some observed evidence (such as the words in the document) is proportional to the product of the prior probability of the hypothesis and the likelihood of the evidence given the hypothesis.
+### Bayes' Rule Applied to Documents and Classes
+- For a document $d$ and a class $c$
 
-The "naive" part of the Naive Bayes classifier comes from the assumption that the features (such as the words in a document) are conditionally independent given the class label. While this assumption is often not true in practice, the Naive Bayes classifier can still perform well in many text classification tasks.
+$$ P(c | d) = \frac{P(d | c)P(c)}{P(d)} $$
+
+### Naïve Bayes Classifier
+
+$$
+\begin{align*}
+    c_{MAP} &= \arg\max_{c \in C} P(c|d) \\
+      		&= \arg\max_{c \in C} \frac{P(d | c)P(c)}{P(d)}\\
+      		&= \arg\max_{c \in C} P(d |c)P(c)\\
+      		&= \arg\max_{c \in C} P(x_1, x_2, \cdots, x_n | c)P(c)
+\end{align*}
+\tag{1}
+$$
+
+### Multinomial Naive Bayes Independence Assumptions
+
+$$ P(x_1, x_2, \cdots, x_n | c) \tag{2}$$
+
+- **Bag of Words assumption**: Assume position doesn't matter
+- **Conditional Independence**: Assume the feature probabilities $P(x_i|c_j)$ are independent given the class $c$.
+
+$$ P(x_1, x_2, \cdots, x_n | c) = P(x_1 |c) \cdot P(x_2 |c) \cdot \cdots \cdot P(x_n |c) \tag{3}$$
+
+### Multinomial Naive Bayes Classifier
+
+$$ c_{NB} = \arg\max_{c \in C} P(c_j) \prod_{x \in X} P(x | c) \tag{5}$$
+
+### Applying Multinomial Naive Bayes Classifiers to Text Classification
+
+$$ c_{NB} = \arg\max_{c_j \in C} [log P(c_j) + \sum_{i \in positions} log P(x_i | c_j)] \tag{7}$$
+
+## Naïve Bayes: Learning
+
+### Learning the Multinomial Naive Bayes Model
+- Maximum likelihood estimates using frequencies in the data
+
+$$ \hat{P}(c_j
