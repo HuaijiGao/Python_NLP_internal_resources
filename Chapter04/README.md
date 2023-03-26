@@ -72,16 +72,16 @@ $$ c_{NB} = \arg\max_{c \in C} P(c_j) \prod_{x \in X} P(x | c) \tag{5}$$
 
 ### :sparkles: Applying Multinomial Naive Bayes Classifiers to Text Classification
 
-$$ c_{NB} = \arg\max_{c_j \in C} [log P(c_j) + \sum_{i \in positions} log P(x_i | c_j)] \tag{7}$$
+$$ c_{NB} = \arg\max_{c_j \in C} [log P(c_j) + \sum_{i \in positions} log P(x_i | c_j)] \tag{6}$$
 
 ## Naïve Bayes: Learning
 
 ### :sparkles: Learning the Multinomial Naive Bayes Model
 - Maximum likelihood estimates using frequencies in the data
 
-$$ \hat{P}(c_j) = \frac{doccount(C = c_j)}{N_{doc}} \tag{8}$$
+$$ \hat{P}(c_j) = \frac{doccount(C = c_j)}{N_{doc}} \tag{7}$$
 
-$$ \hat{P}(w_i|c_j) = \frac{count(w_i, c_j)}{\sum_{w \in V}count(w, c_j)} \tag{9}$$
+$$ \hat{P}(w_i|c_j) = \frac{count(w_i, c_j)}{\sum_{w \in V}count(w, c_j)} \tag{8}$$
 
 ### :sparkles: Parameter estimation
 
@@ -96,7 +96,7 @@ $$ \hat{P}(w_i|c_j) = \frac{count(w_i, c_j)}{\sum_{w \in V}count(w, c_j)} $$
 
 - What if we have seen no training documents with the word fantastic and classified in the topic positive (thumbs-up)?
 
-$$ \hat{P}("fantastic"|positive) = \frac{count("fantastic", positive)}{\sum_{w \in V}count(w, positive)} = 0$$
+$$ \hat{P}(\textrm{fantastic}|positive) = \frac{count(\textrm{fantastic}, positive)}{\sum_{w \in V}count(w, positive)} = 0$$
 
 - Zero probabilities cannot be conditioned away, no matter the other evidence!
 
@@ -109,7 +109,7 @@ $$
     \hat{P}(x_i|c) &= \frac{count(w_i, c)+1}{\sum_{w \in V}(count(w, c)+1)} \\
     			   &= \frac{count(w_i, c)+1}{\sum_{w \in V}count(w, c)+|V|}
 \end{align*}
-\tag{10}
+\tag{9}
 $$
 
 ### :sparkles: Unknown words
