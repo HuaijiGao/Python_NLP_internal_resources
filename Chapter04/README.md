@@ -1,5 +1,9 @@
 # Chapter 04: NLP Text Classification I
 
+|Table of Sections|
+|--|
+|:herb:  [The Task of Text Classification](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#the-task-of-text-classification)<br>:herb:  [Classification Methods](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#classification-methods)<br>:herb:  [Naïve Bayes](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#nave-bayes)<br>:herb:  [Naïve Bayes: Learning](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#nave-bayes-learning)<br>:herb:  [Naïve Bayes Others](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#nave-bayes-others)<br>:herb:  [Sentiment Classification](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#sentiment-classification)<br>:herb:  [Evaluation Metrics](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#evaluation-metrics)<br>:herb:  [Evaluation with More than Two Classes](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#evaluation-with-more-than-two-classes)<br>:herb:  [Avoiding Harms in Classification](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter04/README.md#avoiding-harms-in-classification)|
+
 ## The Task of Text Classification
 
 ### Text Classification: Definition
