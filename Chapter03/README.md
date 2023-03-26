@@ -110,15 +110,15 @@ The best language model is one that best predicts an unseen test set
     - Gives the highest P(sentence)
 Perplexity is the inverse probability of the test set, normalized by the number of words:
 
-$$ PP(W) = P(w_1 w_2 ... w_N)^{-\frac{1}{N}} = \sqrt[N]{\frac{1}{P(w_1 w_2 ... w_N)}} $$
+$$ PP(W) = P(w_1 w_2 ... w_N)^{-\frac{1}{N}} = \sqrt[N]{\frac{1}{P(w_1 w_2 ... w_N)}} \tag{1}$$
 
 Chain rule: 
 
-$$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-n} \cdots w_{t-1})} } $$
+$$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-n} \cdots w_{t-1})} } \tag{2}$$
 
 For bigrams: 
 
-$$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-1} )} } $$
+$$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-1} )} } \tag{3}$$
 
 Minimizing perplexity is the same as maximizing probability
 
@@ -138,11 +138,11 @@ Minimizing perplexity is the same as maximizing probability
 
 We get the perplexity of this sequence of length 120K by first multiplying 120K probabilities (90K of which are 1/4 and 30K of which are 1/120K), and then taking the inverse 120,000th root:
 
-$$ Perp = (\frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \cdots \times \frac{1}{120000} \times \frac{1}{120000} \times \cdots)^{-\frac{1}{120000}} $$
+$$ Perp = (\frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \cdots \times \frac{1}{120000} \times \frac{1}{120000} \times \cdots)^{-\frac{1}{120000}} \tag{4}$$
 
 But this can be arithmetically simplified to just N = 4: the operator (1/4), the sales (1/4), the tech support (1/4), and the 30,000 names (1/120,000):
 
-$$ Perplexity= (\frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{120000})^{-\frac{1}{4}} = 52.6$$ 
+$$ Perplexity= (\frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{120000})^{-\frac{1}{4}} = 52.6 \tag{5}$$ 
 
 ### :sparkles: Perplexity as branching factor
 
