@@ -157,7 +157,7 @@ c_MAP = argmax_c score(c)
 ```
 
 
-### Summary
+### Section Summary
 
 1. Multinomial Naïve Bayes is a simple, powerful model for text classification
 2. Based on Bayes rule and the independence assumption
@@ -172,5 +172,74 @@ c_MAP = argmax_c score(c)
 - The independence assumption is a strong assumption, but the model still works well in practice, especially for text classification tasks.
 - It is a fast and efficient algorithm that can be easily scaled to large datasets.
 
+## Sentiment Classification
 
+### Dealing with Negation
+
+- Negation changes the meaning of words (e.g., "I really `don't` like this movie").
+- Simple baseline method: Add `NOT_` to every word between negation and following punctuation.
+
+### Lexicons
+
+- Pre-built word lists called lexicons can be useful when labeled training data is limited.
+- Examples: MPQA Subjectivity Cues Lexicon, The General Inquirer, Bing Liu Opinion Lexicon.
+
+### Using Lexicons in Sentiment Classification
+
+- Add features that count occurrences of words from lexicons (e.g., positive or negative words).
+- Dense lexicon features can help when training data is sparse or not representative of the test set.
+
+## Naïve Bayes in Other Tasks
+
+### Spam Filtering
+
+- SpamAssassin Features: Mentions millions of dollars, From: starts with many numbers, Subject is all capitals, HTML has a low ratio of text to image area, "One hundred percent guaranteed", Claims you can be removed from the list.
+
+### Language Identification
+
+- Determine the language of a piece of text.
+- Character n-grams perform well.
+- Train on a variety of language instances.
+
+## Naïve Bayes: Relationship to Language Modeling
+
+- Each class is a unigram language model.
+- Assigning each word: $P(\text{word} | c)$
+- Assigning each sentence: $P(s|c)= \prod P(\text{word}|c)$
+
+## Evaluation Metrics
+
+### Precision, Recall, and F measure
+
+- Precision: $\frac{\text{true positives}}{\text{true positives} + \text{false positives}}$
+- Recall: $\frac{\text{true positives}}{\text{true positives} + \text{false negatives}}$
+- F measure: $F_\beta = \frac{(\beta^2 + 1)PR}{\beta^2 P + R}$ (balanced $F_1$: $\beta=1$)
+
+### Development Test Sets ("Devsets") and Cross-validation
+
+- Train on training set, tune on devset, report on testset.
+- Cross-validation: multiple splits, pool results over splits, compute pooled dev performance.
+
+## Evaluation with More than Two Classes
+
+### Confusion Matrix and Combining P/R
+
+- Macroaveraging: compute the performance for each class, and then average over classes.
+- Microaveraging: collect decisions for all classes into one confusion matrix, compute precision and recall from that table.
+
+## Avoiding Harms in Classification
+
+### Harms in Sentiment and Toxicity Classifiers
+
+- Sentiment classifiers may assign lower sentiment to sentences with African American names.
+- Toxicity classifiers may incorrectly flag non-toxic sentences mentioning certain identities.
+
+### Causes of Harms
+
+- Problems in training data, human labels, resources, or model architecture.
+- Mitigation of these harms is an open research area.
+
+### Model Cards
+
+- Document training algorithms and parameters, data sources and motivations, intended use and users, and model performance across different demographic or other groups and environmental situations.
 
