@@ -332,6 +332,10 @@ $$F_\beta = \frac{(\beta^2 + 1)PR}{\beta^2 P + R}$$
 - Macroaveraging: compute the performance for each class, and then average over classes.
 - Microaveraging: collect decisions for all classes into one confusion matrix, compute precision and recall from that table.
 
+|![image](https://user-images.githubusercontent.com/19381768/227760113-bc86ebbc-5a34-40a0-92cb-ce717a233fd6.png)|
+|:--:|
+|Macroaveraging and Microaveraging|
+
 ## Avoiding Harms in Classification
 
 ### :sparkles: Harms in Sentiment and Toxicity Classifiers
