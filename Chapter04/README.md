@@ -211,9 +211,13 @@ c_MAP = argmax_c score(c)
 
 ### Precision, Recall, and F measure
 
-- Precision: $\frac{\text{true positives}}{\text{true positives} + \text{false positives}}$
-- Recall: $\frac{\text{true positives}}{\text{true positives} + \text{false negatives}}$
-- F measure: $F_\beta = \frac{(\beta^2 + 1)PR}{\beta^2 P + R}$ (balanced $F_1$: $\beta=1$)
+- Precision: 
+$$\frac{\text{true positives}}{\text{true positives} + \text{false positives}}$$
+- Recall: 
+$$\frac{\text{true positives}}{\text{true positives} + \text{false negatives}}$$
+- F measure: 
+$$F_\beta = \frac{(\beta^2 + 1)PR}{\beta^2 P + R}$$ 
+(balanced $F_1$: $\beta=1$)
 
 ### Development Test Sets ("Devsets") and Cross-validation
 
