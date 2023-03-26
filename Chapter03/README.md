@@ -1,4 +1,4 @@
-# Revision Notes - Chapter 03: NLP Basic Tasks II
+# Chapter 03: NLP Basic Tasks II
 
 ## Word Normalization and other issues (Cont'd from Chapter02)
 
