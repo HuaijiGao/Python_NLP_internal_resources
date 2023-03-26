@@ -224,5 +224,38 @@ P(w | denied the)
 - Also called Laplace smoothing
 - Pretend we saw each word one more time than we did
 - Just add one to all the counts!
-- MLE estimate: $ P_{MLE} (w_i | w_{i-1
+- MLE estimate: $ P_{MLE} (w_i | w_{i-1}) = \frac{c(w_{i-1}, w_i)}{ c(w_i-1) }$
+- Add-1 estimate: $ P_{Add-1} (w_i | w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{ c(w_i-1)+V }$
+
+### Maximum Likelihood Estimates
+- The maximum likelihood estimate
+    - of some parameter of a model M from a training set T
+    - maximizes the likelihood of the training set T given the model M
+- Suppose the word “bagel” occurs 400 times in a corpus of a million words
+- What is the probability that a random word from some other text will be “bagel”?
+- MLE estimate is 400/1,000,000 = .0004
+- This may be a bad estimate for some other corpus
+    - But it is the estimate that makes it most likely that “bagel” will occur 400 times in a million word corpus.
+
+### Add-1 estimation is a blunt instrument
+- So add-1 isn’t used for N-grams:
+    - There are other methods that perform better
+- But add-1 is used to smooth other NLP models
+    - For text classification
+    - In domains where the number of zeros isn’t so huge.
+
+### Unknown words: Open versus closed vocabulary tasks
+- If we know all the words in advance
+    - Vocabulary V is fixed
+    - Closed vocabulary task
+- Often we don’t know this
+    - Out Of Vocabulary = OOV words
+    - Open vocabulary task
+- Instead: create an unknown word token <UNK>
+    - Training of <UNK> probabilities
+        - Create a fixed lexicon L of size V
+        - At text normalization phase, any training word not in L changed to <UNK>
+        - Now we train its probabilities like a normal word
+    - At decoding time
+        - If text input: Use UNK probabilities for any word not in training
 
