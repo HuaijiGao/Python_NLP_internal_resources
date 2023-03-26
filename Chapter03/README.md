@@ -175,14 +175,18 @@ Perplexity= ((¼ * ¼ * ¼ * 1/120K)^(-1/4) = 52.6
 
 ### Zeros
 - Training set:
+```
 … denied the allegations
 … denied the reports
 … denied the claims
 … denied the request
+```
 
 - Test set
+```
 … denied the offer
 … denied the loan
+```
 
 P(“offer” | denied the) = 0
 
