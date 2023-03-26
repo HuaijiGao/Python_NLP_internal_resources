@@ -182,25 +182,25 @@ After per-document binarization, the sentences become:
 
 We can generate a counts table comparing NB Counts and Binary Counts:
 
-| Word     | NB Counts |      | Binary Counts |      |
-|----------|-----------|------|---------------|------|
-|          | +         | -    | +             | -    |
-| and      | 2         | 0    | 1             | 0    |
-| boxing   | 0         | 1    | 0             | 1    |
-| film     | 1         | 0    | 1             | 0    |
-| great    | 3         | 1    | 2             | 1    |
-| it       | 0         | 1    | 0             | 1    |
-| no       | 0         | 1    | 0             | 1    |
-| or       | 0         | 1    | 0             | 1    |
-| part     | 0         | 1    | 0             | 1    |
-| pathetic | 0         | 1    | 0             | 1    |
-| plot     | 1         | 1    | 1             | 1    |
-| satire   | 1         | 0    | 1             | 0    |
-| scenes   | 1         | 2    | 1             | 2    |
-| the      | 0         | 2    | 0             | 1    |
-| twists   | 1         | 1    | 1             | 1    |
-| was      | 0         | 2    | 0             | 1    |
-| worst    | 0         | 1    | 0             | 1    |
+| Word     | NB Counts     | Binary Counts |
+|----------|-------|-------|-------|-------|
+|          | +     | -     | +     | -     |
+| and      | 2     | 0     | 1     | 0     |
+| boxing   | 0     | 1     | 0     | 1     |
+| film     | 1     | 0     | 1     | 0     |
+| great    | 3     | 1     | 2     | 1     |
+| it       | 0     | 1     | 0     | 1     |
+| no       | 0     | 1     | 0     | 1     |
+| or       | 0     | 1     | 0     | 1     |
+| part     | 0     | 1     | 0     | 1     |
+| pathetic | 0     | 1     | 0     | 1     |
+| plot     | 1     | 1     | 1     | 1     |
+| satire   | 1     | 0     | 1     | 0     |
+| scenes   | 1     | 2     | 1     | 2     |
+| the      | 0     | 2     | 0     | 1     |
+| twists   | 1     | 1     | 1     | 1     |
+| was      | 0     | 2     | 0     | 1     |
+| worst    | 0     | 1     | 0     | 1     |
 
 
 ## Naïve Bayes Others
