@@ -131,4 +131,92 @@ Minimizing perplexity is the same as maximizing probability
     - 30,000 different names (each name occurring 1 time in the 120K calls)
     - What is the perplexity? Next slide
 
-We get
+We get the perplexity of this sequence of length 120K by first multiplying 120K probabilities (90K of which are 1/4 and 30K of which are 1/120K), and then taking the inverse 120,000th root:
+
+Perp = (¼ * ¼ * ¼* ¼ * ¼ * …. * 1/120K * 1/120K * ….)^(-1/120K)
+
+But this can be arithmetically simplified to just N = 4: the operator (1/4), the sales (1/4), the tech support (1/4), and the 30,000 names (1/120,000):
+Perplexity= ((¼ * ¼ * ¼ * 1/120K)^(-1/4) = 52.6
+
+### Perplexity as branching factor
+
+- Let’s suppose a sentence consisting of random digits
+- What is the perplexity of this sentence according to a model that assigns P=1/10 to each digit?
+
+### Lower perplexity = better model
+
+- Training 38 million words, test 1.5 million words, WSJ
+
+| N-gram Order | Unigram | Bigram | Trigram |
+|---|---|---|---|
+| Perplexity    | 962   | 170  | 109    |
+
+## Generalization and zeros
+
+### The Shannon Visualization Method
+- Choose a random bigram (<s>, w) according to its probability
+- Now choose a random bigram (w, x) according to its probability
+- And so on until we choose </s>
+- Then string the words together
+
+### Shakespeare as corpus
+- N=884,647 tokens, V=29,066
+- Shakespeare produced 300,000 bigram types out of V^2= 844 million possible bigrams.
+    - So 99.96% of the possible bigrams were never seen (have zero entries in the table)
+- Quadrigrams worse: What's coming out looks like Shakespeare because it is Shakespeare
+
+### The perils of overfitting
+- N-grams only work well for word prediction if the test corpus looks like the training corpus
+    - In real life, it often doesn’t
+    - We need to train robust models that generalize!
+    - One kind of generalization: Zeros!
+        - Things that don’t ever occur in the training set
+            - But occur in the test set
+
+### Zeros
+- Training set:
+… denied the allegations
+… denied the reports
+… denied the claims
+… denied the request
+
+- Test set
+… denied the offer
+… denied the loan
+
+P(“offer” | denied the) = 0
+
+### Zero probability bigrams
+- Bigrams with zero probability
+    - mean that we will assign 0 probability to the test set!
+- And hence we cannot compute perplexity (can’t divide by 0)!
+
+## Smoothing: Add-one (Laplace) smoothing
+
+### The intuition of smoothing (from Dan Klein)
+
+- When we have sparse statistics:
+
+P(w | denied the)
+3 allegations
+2 reports
+1 claims
+1 request
+7 total
+
+- Steal probability mass to generalize better
+
+P(w | denied the)
+2.5 allegations
+1.5 reports
+0.5 claims
+0.5 request
+2 other
+7 total
+
+### Add-one estimation
+- Also called Laplace smoothing
+- Pretend we saw each word one more time than we did
+- Just add one to all the counts!
+- MLE estimate: $ P_{MLE} (w_i | w_{i-1
+
