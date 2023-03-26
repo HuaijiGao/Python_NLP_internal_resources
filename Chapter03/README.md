@@ -44,18 +44,18 @@
 
 ### Probabilistic Language Models
 - Assign probability to a sentence
-- Compute the probability of a sentence or sequence of words: P(W) = P(w1,w2,w3,w4,w5…wn)
-- Compute the probability of an upcoming word: P(w5|w1,w2,w3,w4)
+- Compute the probability of a sentence or sequence of words: $P(W) = P(w_1,w_2,w_3,w_4,w_5 \cdots w_n)$
+- Compute the probability of an upcoming word: $P(w_5|w_1,w_2,w_3,w_4)$
 
 ### Chain Rule applied to compute joint probability of words in sentence
-- P(w1w2…wn) = Π_i P(wi | w1w2…wi−1)
+- $P(w_1w_2 \cdots w_n) = \prod_i P(w_i | w_1w_2 \cdots w_{i−1})$
 - Simplifying assumption: Markov Assumption
 - Unigram, Bigram, Trigram, N-gram models
 
 ## Estimating N-gram Probabilities
 
 ### Estimating bigram probabilities
-- Maximum Likelihood Estimate: P(wi | wi−1) = count(wi−1,wi )/ count(wi−1)
+- Maximum Likelihood Estimate: $P(w_i | w_{i−1}) = count(w_{i−1},w_i )/ count(w_{i−1})$
 
 ### Practical Issues
 - Use log space to avoid underflow and for faster computation
