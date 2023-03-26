@@ -7,38 +7,38 @@
 ## Word Normalization and other issues
 ***Revision for the last part of Chapter02***
 
-### Normalization
+### :sparkles: Normalization
 - Normalize terms for better matching in Information Retrieval
 - Define equivalence classes of terms
 - Asymmetric expansion: different search results based on input form
 
-### Case folding
+### :sparkles: Case folding
 - Reduce all letters to lower case, except when case is important (e.g., sentiment analysis, MT, Information extraction)
 
-### Lemmatization
+### :sparkles: Lemmatization
 - Represent words as their shared root or dictionary headword form
 - Done by Morphological Parsing
 - Morphemes: Stems (core meaning-bearing units) and Affixes (with grammatical functions)
 
-### Stemming
+### :sparkles: Stemming
 - Reduce terms to stems, crudely chopping off affixes
 - Language dependent (e.g., automate, automatic, automation → automat)
 
-### Porter Stemmer
+### :sparkles: Porter Stemmer
 - Cascade of rewrite rules run in series
 - Sample rules:
   - ATIONAL $\rightarrow$ ATE (e.g., relational $\rightarrow$ relate)
   - ING $\rightarrow$ ε if stem contains vowel (e.g., motoring $\rightarrow$ motor)
   - SSES $\rightarrow$ SS (e.g., grasses $\rightarrow$ grass)
 
-### Dealing with complex morphology
+### :sparkles: Dealing with complex morphology
 - Necessary for many languages, like Turkish
 
-### Sentence Segmentation
+### :sparkles: Sentence Segmentation
 - Deciding whether a period is part of a word or a sentence-boundary marker
 - Use abbreviation dictionary and rules based on tokenization
 
-### Decision Trees
+### :sparkles: Decision Trees
 - General decision tree for determining E-O-S (end of sentence)
 - Numeric features and case features
 - Decision trees implemented as if-then-else statements
@@ -46,27 +46,27 @@
 
 ## Introduction to N-grams
 
-### Probabilistic Language Models
+### :sparkles: Probabilistic Language Models
 - Assign probability to a sentence
 - Compute the probability of a sentence or sequence of words: $P(W) = P(w_1,w_2,w_3,w_4,w_5 \cdots w_n)$
 - Compute the probability of an upcoming word: $P(w_5|w_1,w_2,w_3,w_4)$
 
-### Chain Rule applied to compute joint probability of words in sentence
+### :sparkles: Chain Rule applied to compute joint probability of words in sentence
 - $P(w_1w_2 \cdots w_n) = \prod_i P(w_i | w_1w_2 \cdots w_{i−1})$
 - Simplifying assumption: Markov Assumption
 - Unigram, Bigram, Trigram, N-gram models
 
 ## Estimating N-gram Probabilities
 
-### Estimating bigram probabilities
+### :sparkles: Estimating bigram probabilities
 - Maximum Likelihood Estimate: $P(w_i | w_{i−1}) = count(w_{i−1},w_i )/ count(w_{i−1})$
 
-### Practical Issues
+### :sparkles: Practical Issues
 - Use log space to avoid underflow and for faster computation
 
 ## Evaluation and Perplexity
 
-### Evaluation: How good is our model?
+### :sparkles: Evaluation: How good is our model?
 - Does our language model prefer good sentences to bad ones?
     - Assign higher probability to “real” or “frequently observed” sentences
         - Than “ungrammatical” or “rarely observed” sentences?
@@ -75,7 +75,7 @@
     - A test set is an unseen dataset that is different from our training set, totally unused.
     - An evaluation metric tells us how well our model does on the test set.
 
-### Extrinsic evaluation of N-gram models
+### :sparkles: Extrinsic evaluation of N-gram models
 - Best evaluation for comparing models A and B
     - Put each model in a task
         - spelling corrector, speech recognizer, MT system
@@ -84,7 +84,7 @@
         - How many words translated correctly
     - Compare accuracy for A and B
 
-### Difficulty of extrinsic (in-vivo) evaluation of N-gram models
+### :sparkles: Difficulty of extrinsic (in-vivo) evaluation of N-gram models
 - Extrinsic evaluation
     - Time-consuming; can take days or weeks
 - So
@@ -94,7 +94,7 @@
         - So generally only useful in pilot experiments
     - But is helpful to think about.
 
-### Intuition of Perplexity
+### :sparkles: Intuition of Perplexity
 - The Shannon Game:
     - How well can we predict the next word?
         - I always order pizza with cheese and ____
@@ -104,7 +104,7 @@
 - A better model of a text
     - is one which assigns a higher probability to the word that actually occurs
 
-### Perplexity
+### :sparkles: Perplexity
 
 The best language model is one that best predicts an unseen test set
     - Gives the highest P(sentence)
@@ -122,7 +122,7 @@ $$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-1} )} } $$
 
 Minimizing perplexity is the same as maximizing probability
 
-### The Shannon Game intuition for perplexity
+### :sparkles: The Shannon Game intuition for perplexity
 - From Josh Goodman
 - Perplexity is weighted equivalent branching factor
 - How hard is the task of recognizing digits ‘0,1,2,3,4,5,6,7,8,9’
@@ -143,12 +143,12 @@ Perp = (¼ * ¼ * ¼* ¼ * ¼ * …. * 1/120K * 1/120K * ….)^(-1/120K)
 But this can be arithmetically simplified to just N = 4: the operator (1/4), the sales (1/4), the tech support (1/4), and the 30,000 names (1/120,000):
 Perplexity= ((¼ * ¼ * ¼ * 1/120K)^(-1/4) = 52.6
 
-### Perplexity as branching factor
+### :sparkles: Perplexity as branching factor
 
 - Let’s suppose a sentence consisting of random digits
 - What is the perplexity of this sentence according to a model that assigns P=1/10 to each digit?
 
-### Lower perplexity = better model
+### :sparkles: Lower perplexity = better model
 
 - Training 38 million words, test 1.5 million words, WSJ
 
@@ -158,19 +158,19 @@ Perplexity= ((¼ * ¼ * ¼ * 1/120K)^(-1/4) = 52.6
 
 ## Generalization and zeros
 
-### The Shannon Visualization Method
+### :sparkles: The Shannon Visualization Method
 - Choose a random bigram `(<s>, w)` according to its probability
 - Now choose a random bigram `(w, x)` according to its probability
 - And so on until we choose `</s>`
 - Then string the words together
 
-### Shakespeare as corpus
+### :sparkles: Shakespeare as corpus
 - N=884,647 tokens, V=29,066
 - Shakespeare produced 300,000 bigram types out of V^2= 844 million possible bigrams.
     - So 99.96% of the possible bigrams were never seen (have zero entries in the table)
 - Quadrigrams worse: What's coming out looks like Shakespeare because it is Shakespeare
 
-### The perils of overfitting
+### :sparkles: The perils of overfitting
 - N-grams only work well for word prediction if the test corpus looks like the training corpus
     - In real life, it often doesn’t
     - We need to train robust models that generalize!
@@ -178,7 +178,7 @@ Perplexity= ((¼ * ¼ * ¼ * 1/120K)^(-1/4) = 52.6
         - Things that don’t ever occur in the training set
             - But occur in the test set
 
-### Zeros
+### :sparkles: Zeros
 - Training set:
 ```
 … denied the allegations
@@ -195,14 +195,14 @@ Perplexity= ((¼ * ¼ * ¼ * 1/120K)^(-1/4) = 52.6
 
 P(“offer” | denied the) = 0
 
-### Zero probability bigrams
+### :sparkles: Zero probability bigrams
 - Bigrams with zero probability
     - mean that we will assign 0 probability to the test set!
 - And hence we cannot compute perplexity (can’t divide by 0)!
 
 ## Smoothing: Add-one (Laplace) smoothing
 
-### The intuition of smoothing (from Dan Klein)
+### :sparkles: The intuition of smoothing (from Dan Klein)
 
 - When we have sparse statistics:
 ```
@@ -225,14 +225,14 @@ P(w | denied the)
 7 total
 ```
 
-### Add-one estimation
+### :sparkles: Add-one estimation
 - Also called Laplace smoothing
 - Pretend we saw each word one more time than we did
 - Just add one to all the counts!
 - MLE estimate: $ P_{MLE} (w_i | w_{i-1}) = \frac{c(w_{i-1}, w_i)}{ c(w_i-1) }$
 - Add-1 estimate: $ P_{Add-1} (w_i | w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{ c(w_i-1)+V }$
 
-### Maximum Likelihood Estimates
+### :sparkles: Maximum Likelihood Estimates
 - The maximum likelihood estimate
     - of some parameter of a model M from a training set T
     - maximizes the likelihood of the training set T given the model M
@@ -242,14 +242,14 @@ P(w | denied the)
 - This may be a bad estimate for some other corpus
     - But it is the estimate that makes it most likely that “bagel” will occur 400 times in a million word corpus.
 
-### Add-1 estimation is a blunt instrument
+### :sparkles: Add-1 estimation is a blunt instrument
 - So add-1 isn’t used for N-grams:
     - There are other methods that perform better
 - But add-1 is used to smooth other NLP models
     - For text classification
     - In domains where the number of zeros isn’t so huge.
 
-### Unknown words: Open versus closed vocabulary tasks
+### :sparkles: Unknown words: Open versus closed vocabulary tasks
 - If we know all the words in advance
     - Vocabulary V is fixed
     - Closed vocabulary task
