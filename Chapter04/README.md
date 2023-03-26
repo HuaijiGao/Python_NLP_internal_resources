@@ -257,7 +257,7 @@ We can generate a counts table comparing NB Counts and Binary Counts:
 - Add features that count occurrences of words from lexicons (e.g., positive or negative words).
 - Dense lexicon features can help when training data is sparse or not representative of the test set.
 
-### A Worked Sentiment Example
+### :sparkles: A Worked Sentiment Example
 
 Training sentences:
 - (neg) just plain boring
@@ -269,7 +269,7 @@ Training sentences:
 Test sentence:
 - predictable with no fun
 
-### Training the Model
+### :sparkles: Training the Model
 
 1. Calculate the class priors: $P(c)$
     - $P(neg) = \frac{3}{5}$
@@ -281,7 +281,7 @@ For example, for the word "predictable":
     - $P(predictable | neg) = \frac{1 + 1}{14 + 20} = \frac{1}{17}$
     - $P(predictable | pos) = \frac{0 + 1}{9 + 20} = \frac{1}{29}$
 
-### Classifying the Test Sentence
+### :sparkles: Classifying the Test Sentence
 
 1. Tokenize the test sentence: "predictable", "with", "no", "fun"
 
