@@ -107,9 +107,13 @@ Perplexity is the inverse probability of the test set, normalized by the number 
 
 $$ PP(W) = P(w_1 w_2 ... w_N)^{-\frac{1}{N}} = \sqrt[N]{\frac{1}{P(w_1 w_2 ... w_N)}} $$
 
-Chain rule: $$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-n} \cdots w_{t-1})} } $$
+Chain rule: 
 
-For bigrams: $$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-1} )} } $$
+$$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-n} \cdots w_{t-1})} } $$
+
+For bigrams: 
+
+$$ PP(W) = \sqrt[N]{ \prod_{t=n+1}^N \frac{1}{P(w_t | w_{t-1} )} } $$
 
 Minimizing perplexity is the same as maximizing probability
 
