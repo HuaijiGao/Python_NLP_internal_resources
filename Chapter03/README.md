@@ -58,3 +58,73 @@
 
 ### Practical Issues
 - Use log space to avoid underflow and for faster computation
+
+## Evaluation and Perplexity
+
+### Evaluation: How good is our model?
+- Does our language model prefer good sentences to bad ones?
+    - Assign higher probability to “real” or “frequently observed” sentences
+        - Than “ungrammatical” or “rarely observed” sentences?
+- We train parameters of our model on a training set.
+- We test the model’s performance on data we haven’t seen.
+    - A test set is an unseen dataset that is different from our training set, totally unused.
+    - An evaluation metric tells us how well our model does on the test set.
+
+### Extrinsic evaluation of N-gram models
+- Best evaluation for comparing models A and B
+    - Put each model in a task
+        - spelling corrector, speech recognizer, MT system
+    - Run the task, get an accuracy for A and for B
+        - How many misspelled words corrected properly
+        - How many words translated correctly
+    - Compare accuracy for A and B
+
+### Difficulty of extrinsic (in-vivo) evaluation of N-gram models
+- Extrinsic evaluation
+    - Time-consuming; can take days or weeks
+- So
+    - Sometimes use intrinsic evaluation: perplexity
+    - Bad approximation
+        - unless the test data looks just like the training data
+        - So generally only useful in pilot experiments
+    - But is helpful to think about.
+
+### Intuition of Perplexity
+- The Shannon Game:
+    - How well can we predict the next word?
+        - I always order pizza with cheese and ____
+        - The 33rd President of the US was ____
+        - I saw a ____
+    - Unigrams are terrible at this game. (Why?)
+- A better model of a text
+    - is one which assigns a higher probability to the word that actually occurs
+
+### Perplexity
+
+The best language model is one that best predicts an unseen test set
+    - Gives the highest P(sentence)
+Perplexity is the inverse probability of the test set, normalized by the number of words:
+
+$$ PP(W) = P(w_1 w_2 ... w_N)^{-\\frac{1}{N}} = \\sqrt[N]{\\frac{1}{P(w_1 w_2 ... w_N)}} $$
+
+Chain rule: $$ PP(W) = \\sqrt[N]{ \\prod_{t=n+1}^N \\frac{1}{P(w_t | w_{t-n} \\cdots w_{t-1})} } $$
+
+For bigrams: $$ PP(W) = \\sqrt[N]{ \\prod_{t=n+1}^N \\frac{1}{P(w_t | w_{t-1} )} } $$
+
+Minimizing perplexity is the same as maximizing probability
+
+### The Shannon Game intuition for perplexity
+- From Josh Goodman
+- Perplexity is weighted equivalent branching factor
+- How hard is the task of recognizing digits ‘0,1,2,3,4,5,6,7,8,9’
+    - Perplexity 10
+- How hard is recognizing (30,000) names at Microsoft.
+    - Perplexity = 30,000
+- Let's imagine a call-routing phone system gets 120K calls and has to recognize
+    - "Operator" (let's say this occurs 1 in 4 calls)
+    - "Sales" (1in 4)
+    - "Technical Support" (1 in 4)
+    - 30,000 different names (each name occurring 1 time in the 120K calls)
+    - What is the perplexity? Next slide
+
+We get
