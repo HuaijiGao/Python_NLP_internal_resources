@@ -138,10 +138,11 @@ Minimizing perplexity is the same as maximizing probability
 
 We get the perplexity of this sequence of length 120K by first multiplying 120K probabilities (90K of which are 1/4 and 30K of which are 1/120K), and then taking the inverse 120,000th root:
 
-Perp = (¼ * ¼ * ¼* ¼ * ¼ * …. * 1/120K * 1/120K * ….)^(-1/120K)
+$$ Perp = (\frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \cdots \times \frac{1}{120000} \times \frac{1}{120000} \times \cdots)^{-\frac{1}{120000}} $$
 
 But this can be arithmetically simplified to just N = 4: the operator (1/4), the sales (1/4), the tech support (1/4), and the 30,000 names (1/120,000):
-Perplexity= ((¼ * ¼ * ¼ * 1/120K)^(-1/4) = 52.6
+
+$$ Perplexity= (\frac{1}{4} \times \frac{1}{4} \times \frac{1}{4} \times \frac{1}{120000})^{-\frac{1}{4}} = 52.6$$ 
 
 ### :sparkles: Perplexity as branching factor
 
