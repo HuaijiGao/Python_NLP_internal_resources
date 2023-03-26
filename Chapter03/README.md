@@ -59,7 +59,7 @@
 ## Estimating N-gram Probabilities
 
 ### :sparkles: Estimating bigram probabilities
-- Maximum Likelihood Estimate: $P(w_i | w_{i−1}) = count(w_{i−1},w_i )/ count(w_{i−1})$
+- Maximum Likelihood Estimate: $P(w_i | w_{i−1}) = \frac{count(w_{i−1},w_i )}{count(w_{i−1})}$
 
 ### :sparkles: Practical Issues
 - Use log space to avoid underflow and for faster computation
