@@ -1,6 +1,7 @@
 # Chapter 03: NLP Basic Tasks II
 
-## Word Normalization and other issues (Cont'd from Chapter02)
+## Word Normalization and other issues
+***Revision for the last part of Chapter02***
 
 ### Normalization
 - Normalize terms for better matching in Information Retrieval
