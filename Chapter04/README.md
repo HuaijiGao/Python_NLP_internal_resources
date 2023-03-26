@@ -225,6 +225,10 @@ We can generate a counts table comparing NB Counts and Binary Counts:
 - Assigning each word: $P(\text{word} | c)$
 - Assigning each sentence: $P(s|c)= \prod P(\text{word}|c)$
 
+|![image](https://user-images.githubusercontent.com/19381768/227759914-97057801-a97b-4d3c-b728-793d7c6742cc.png)|
+|:--:|
+|Generative model for multinomial Naïve Bayes|
+
 ### :sparkles: Naïve Bayes Summary
 
 1. Multinomial Naïve Bayes is a simple, powerful model for text classification
@@ -294,6 +298,10 @@ For example, for the word "predictable":
 
 ## Evaluation Metrics
 
+|![image](https://user-images.githubusercontent.com/19381768/227759985-a881b102-ea20-45a2-985d-5ac8e877d271.png)|
+|:--:|
+|The 2-by-2 confusion matrix|
+
 ### :sparkles: Precision, Recall, and F measure
 
 - Precision: 
@@ -309,7 +317,15 @@ $$F_\beta = \frac{(\beta^2 + 1)PR}{\beta^2 P + R}$$
 - Train on training set, tune on devset, report on testset.
 - Cross-validation: multiple splits, pool results over splits, compute pooled dev performance.
 
+|![image](https://user-images.githubusercontent.com/19381768/227760021-6ec9b1e7-fce0-42cf-9b28-c4c7dda1b8ec.png)|
+|:-:|
+|Cross-validation: multiple splits|
+
 ## Evaluation with More than Two Classes
+
+|![image](https://user-images.githubusercontent.com/19381768/227760052-c1cfff13-dc6b-45f8-ac8d-d74297d94f1c.png)|
+|:--:|
+|Confusion Matrix for 3-class classification|
 
 ### :sparkles: Confusion Matrix and Combining P/R
 
