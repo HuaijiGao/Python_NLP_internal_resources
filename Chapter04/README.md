@@ -164,6 +164,45 @@ for each word w_k in d
 c_MAP = argmax_c score(c)
 ```
 
+## Binary Multinomial Naive Bayes Examples
+
+Given sentences (or we can call them documents):
+
+1. (neg) it was pathetic the worst part was the boxing scenes
+2. (neg) no plot twists or great scenes
+3. (pos) and satire and great plot twists
+4. (pos) great scenes great film
+
+After per-document binarization, the sentences become:
+
+1. (neg) it was pathetic the worst part boxing scenes
+2. (neg) no plot twists or great scenes
+3. (pos) and satire great plot twists
+4. (pos) great scenes film
+
+We can generate a counts table comparing NB Counts and Binary Counts:
+
+| Word     | NB Counts |      | Binary Counts |      |
+|----------|-----------|------|---------------|------|
+|          | +         | -    | +             | -    |
+| and      | 2         | 0    | 1             | 0    |
+| boxing   | 0         | 1    | 0             | 1    |
+| film     | 1         | 0    | 1             | 0    |
+| great    | 3         | 1    | 2             | 1    |
+| it       | 0         | 1    | 0             | 1    |
+| no       | 0         | 1    | 0             | 1    |
+| or       | 0         | 1    | 0             | 1    |
+| part     | 0         | 1    | 0             | 1    |
+| pathetic | 0         | 1    | 0             | 1    |
+| plot     | 1         | 1    | 1             | 1    |
+| satire   | 1         | 0    | 1             | 0    |
+| scenes   | 1         | 2    | 1             | 2    |
+| the      | 0         | 2    | 0             | 1    |
+| twists   | 1         | 1    | 1             | 1    |
+| was      | 0         | 2    | 0             | 1    |
+| worst    | 0         | 1    | 0             | 1    |
+
+
 ## Naïve Bayes Others
 
 ### :sparkles: Spam Filtering
