@@ -204,6 +204,7 @@ P(w | denied the)
 1 request
 7 total
 ```
+
 - Steal probability mass to generalize better
 ```
 P(w | denied the)
@@ -214,6 +215,7 @@ P(w | denied the)
 2 other
 7 total
 ```
+
 ### Add-one estimation
 - Also called Laplace smoothing
 - Pretend we saw each word one more time than we did
