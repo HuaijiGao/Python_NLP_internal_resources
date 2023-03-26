@@ -1,5 +1,9 @@
 # Chapter 03: NLP Basic Tasks II
 
+|Table of Sections|
+|--|
+|:herb:  [Word Normalization and other issues](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter03/README.md#word-normalization-and-other-issues)<br>:herb:  [Introduction to N-grams](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter03/README.md#introduction-to-ngrams)<br>:herb:  [Estimating N-gram Probabilities](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter03/README.md#estimating-ngram-probabilities)<br>:herb:  [Evaluation and Perplexity](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter03/README.md#evaluation-and-perplexity)<br>:herb:  [Generalization and zeros](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter03/README.md#generalization-and-zeros)<br>:herb:  [Smoothing: Add-one (Laplace) smoothing](https://github.com/bosoninfo/Resource_NLP-in-Python/blob/main/Chapter03/README.md#smoothing-addone-laplace-smoothing)|
+
 ## Word Normalization and other issues
 ***Revision for the last part of Chapter02***
 
