@@ -183,7 +183,7 @@ After per-document binarization, the sentences become:
 We can generate a counts table comparing NB Counts and Binary Counts:
 
 <table align="center">
-  <tr><th rowspan="2">Word</th><th colspan="2">NB Counts</th><th colspan="2">Binary Counts</th></tr>
+  <tr><th rowspan="2"></th><th colspan="2">NB Counts</th><th colspan="2">Binary Counts</th></tr>
   <tr><th>+</th><th>-</th><th>+</th><th>-</th></tr>
   <tr><td>and</td><td>2</td><td>0</td><td>1</td><td>0</td></tr>
   <tr><td>boxing</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
