@@ -1,4 +1,4 @@
-# NLP Basic Tasks I
+# Chapter 02: NLP Basic Tasks I
 
 |Table of Sections|
 |---|
