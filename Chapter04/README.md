@@ -43,7 +43,7 @@
 ### :sparkles: Bayes' Rule Applied to Documents and Classes
 - For a document $d$ and a class $c$
 
-$$ P(c | d) = \frac{P(d | c)P(c)}{P(d)} $$
+$$ P(c | d) = \frac{P(d | c)P(c)}{P(d)} \tag{1}$$
 
 ### :sparkles: Naïve Bayes Classifier
 
@@ -54,17 +54,17 @@ $$
       		&= \arg\max_{c \in C} P(d |c)P(c)\\
       		&= \arg\max_{c \in C} P(x_1, x_2, \cdots, x_n | c)P(c)
 \end{align*}
-\tag{1}
+\tag{2}
 $$
 
 ### :sparkles: Multinomial Naive Bayes Independence Assumptions
 
-$$ P(x_1, x_2, \cdots, x_n | c) \tag{2}$$
+$$ P(x_1, x_2, \cdots, x_n | c) \tag{3}$$
 
 - **Bag of Words assumption**: Assume position doesn't matter
 - **Conditional Independence**: Assume the feature probabilities $P(x_i|c_j)$ are independent given the class $c$.
 
-$$ P(x_1, x_2, \cdots, x_n | c) = P(x_1 |c) \cdot P(x_2 |c) \cdot \cdots \cdot P(x_n |c) \tag{3}$$
+$$ P(x_1, x_2, \cdots, x_n | c) = P(x_1 |c) \cdot P(x_2 |c) \cdot \cdots \cdot P(x_n |c) \tag{4}$$
 
 ### :sparkles: Multinomial Naive Bayes Classifier
 
