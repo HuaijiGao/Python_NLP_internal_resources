@@ -196,16 +196,16 @@ P(“offer” | denied the) = 0
 ### The intuition of smoothing (from Dan Klein)
 
 - When we have sparse statistics:
-
+```
 P(w | denied the)
 3 allegations
 2 reports
 1 claims
 1 request
 7 total
-
+```
 - Steal probability mass to generalize better
-
+```
 P(w | denied the)
 2.5 allegations
 1.5 reports
@@ -213,7 +213,7 @@ P(w | denied the)
 0.5 request
 2 other
 7 total
-
+```
 ### Add-one estimation
 - Also called Laplace smoothing
 - Pretend we saw each word one more time than we did
