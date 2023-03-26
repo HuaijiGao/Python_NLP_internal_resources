@@ -155,9 +155,9 @@ Perplexity= ((¼ * ¼ * ¼ * 1/120K)^(-1/4) = 52.6
 ## Generalization and zeros
 
 ### The Shannon Visualization Method
-- Choose a random bigram (<s>, w) according to its probability
-- Now choose a random bigram (w, x) according to its probability
-- And so on until we choose </s>
+- Choose a random bigram `(<s>, w)` according to its probability
+- Now choose a random bigram `(w, x)` according to its probability
+- And so on until we choose `</s>`
 - Then string the words together
 
 ### Shakespeare as corpus
