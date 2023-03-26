@@ -16,7 +16,7 @@
 - Done by Morphological Parsing
 - Morphemes: Stems (core meaning-bearing units) and Affixes (with grammatical functions)
 
-## Stemming
+### Stemming
 - Reduce terms to stems, crudely chopping off affixes
 - Language dependent (e.g., automate, automatic, automation → automat)
 
