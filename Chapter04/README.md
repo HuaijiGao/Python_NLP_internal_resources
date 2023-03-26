@@ -29,6 +29,11 @@
 - Output: a learned classifier $\gamma:d \rightarrow c$
 - Classifiers: Naïve Bayes, Logistic regression, Neural networks, k-Nearest Neighbors, etc.
 
+
+|![image](https://user-images.githubusercontent.com/19381768/227757885-6f34cdbc-2022-4b5f-98aa-fe6134b8e58c.png)|
+|:--:|
+|Bag of Words representation|
+
 ## Naïve Bayes
 
 ### :sparkles: Naive Bayes Intuition
@@ -165,6 +170,10 @@ c_MAP = argmax_c score(c)
 
 - SpamAssassin Features: Mentions millions of dollars, From: starts with many numbers, Subject is all capitals, HTML has a low ratio of text to image area, "One hundred percent guaranteed", Claims you can be removed from the list.
 
+|![image](https://user-images.githubusercontent.com/19381768/227757798-ce90063c-6502-4c8d-8c26-804ec9ed490b.png)|
+|:--:|
+|Spam Email|
+
 ### :sparkles: Language Identification
 
 - Determine the language of a piece of text.
@@ -177,7 +186,7 @@ c_MAP = argmax_c score(c)
 - Assigning each word: $P(\text{word} | c)$
 - Assigning each sentence: $P(s|c)= \prod P(\text{word}|c)$
 
-### :sparkles: Naive Bayes Summary
+### :sparkles: Naïve Bayes Summary
 
 1. Multinomial Naïve Bayes is a simple, powerful model for text classification
 2. Based on Bayes rule and the independence assumption
@@ -208,6 +217,41 @@ c_MAP = argmax_c score(c)
 
 - Add features that count occurrences of words from lexicons (e.g., positive or negative words).
 - Dense lexicon features can help when training data is sparse or not representative of the test set.
+
+### A Worked Sentiment Example
+
+Training sentences:
+- (neg) just plain boring
+- (neg) entirely predictable and lacks energy
+- (neg) no surprises and very few laughs
+- (pos) very powerful
+- (pos) the most fun film of the summer
+
+Test sentence:
+- predictable with no fun
+
+### Training the Model
+
+1. Calculate the class priors: $P(c)$
+    - $P(neg) = \frac{3}{5}$
+    - $P(pos) = \frac{2}{5}$
+
+2. Calculate the likelihoods: $P(word | c)$. Given that $N_{neg}=14$, $N_{pos}=9$, $|V|=20$
+
+For example, for the word "predictable":
+    - $P(predictable | neg) = \frac{1 + 1}{14 + 20} = \frac{1}{17}$
+    - $P(predictable | pos) = \frac{0 + 1}{9 + 20} = \frac{1}{29}$
+
+### Classifying the Test Sentence
+
+1. Tokenize the test sentence: "predictable", "with", "no", "fun"
+
+2. Calculate the posterior probabilities using the likelihoods and priors:
+    - $P(neg | text) \propto P(neg) \times P(predictable | neg) \times P(with | neg) \times P(no | neg) \times P(fun | neg)$
+    - $P(pos | text) \propto P(pos) \times P(predictable | pos) \times P(with | pos) \times P(no | pos) \times P(fun | pos)$
+
+3. Compare the posterior probabilities and assign the class with the highest probability:
+    - Since $P(neg | text) > P(pos | text)$, the test sentence is classified as negative.
 
 ## Evaluation Metrics
 
