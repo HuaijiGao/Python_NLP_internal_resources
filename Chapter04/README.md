@@ -7,7 +7,7 @@
 ## The Task of Text Classification
 
 ### :sparkles: Text Classification: Definition
-- Input: a document $d$ and a fixed set of classes $C = {c_1, c_2, \cdots, c_J}$
+- Input: a document $d$ and a fixed set of classes $C = \{c_1, c_2, \cdots, c_J\}$
 - Output: a predicted class $c \in C$
 
 ### :sparkles: Text Classification Examples
@@ -25,7 +25,7 @@
 - Building and maintaining these rules is expensive
 
 ### :sparkles: Supervised Machine Learning
-- Input: a document $d$, a fixed set of classes $C = {c_1, c_2, \cdots, c_J}$, a training set of $m$ hand-labeled documents $(d_1,c_1), \cdots, (d_m,c_m)$
+- Input: a document $d$, a fixed set of classes $C = \{c_1, c_2, \cdots, c_J\}$, a training set of $m$ hand-labeled documents $(d_1,c_1), \cdots, (d_m,c_m)$
 - Output: a learned classifier $\gamma:d \rightarrow c$
 - Classifiers: Naïve Bayes, Logistic regression, Neural networks, k-Nearest Neighbors, etc.
 
