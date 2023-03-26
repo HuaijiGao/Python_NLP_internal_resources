@@ -182,27 +182,27 @@ After per-document binarization, the sentences become:
 
 We can generate a counts table comparing NB Counts and Binary Counts:
 
-| Word     | NB Counts     | Binary Counts |
-|----------|-------|-------|-------|-------|
-|          | +     | -     | +     | -     |
-| and      | 2     | 0     | 1     | 0     |
-| boxing   | 0     | 1     | 0     | 1     |
-| film     | 1     | 0     | 1     | 0     |
-| great    | 3     | 1     | 2     | 1     |
-| it       | 0     | 1     | 0     | 1     |
-| no       | 0     | 1     | 0     | 1     |
-| or       | 0     | 1     | 0     | 1     |
-| part     | 0     | 1     | 0     | 1     |
-| pathetic | 0     | 1     | 0     | 1     |
-| plot     | 1     | 1     | 1     | 1     |
-| satire   | 1     | 0     | 1     | 0     |
-| scenes   | 1     | 2     | 1     | 2     |
-| the      | 0     | 2     | 0     | 1     |
-| twists   | 1     | 1     | 1     | 1     |
-| was      | 0     | 2     | 0     | 1     |
-| worst    | 0     | 1     | 0     | 1     |
-
-
+<table align="center">
+  <tr><th rowspan="2">Word</th><th colspan="2">NB Counts</th><th colspan="2">Binary Counts</th></tr>
+  <tr><th>+</th><th>-</th><th>+</th><th>-</th></tr>
+  <tr><td>and</td><td>2</td><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>boxing</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>film</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>great</td><td>3</td><td>1</td><td>2</td><td>1</td></tr>
+  <tr><td>it</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>no</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>or</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>part</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>pathetic</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>plot</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+  <tr><td>satire</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>scenes</td><td>1</td><td>2</td><td>1</td><td>2</td></tr>
+  <tr><td>the</td><td>0</td><td>2</td><td>0</td><td>1</td></tr>
+  <tr><td>twists</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+  <tr><td>was</td><td>0</td><td>2</td><td>0</td><td>1</td></tr>
+  <tr><td>worst</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+</table>
+ 
 ## Naïve Bayes Others
 
 ### :sparkles: Spam Filtering
