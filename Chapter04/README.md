@@ -276,14 +276,15 @@ Test sentence:
 ### :sparkles: Training the Model
 
 1. Calculate the class priors: $P(c)$
-    - $P(neg) = \frac{3}{5}$
-    - $P(pos) = \frac{2}{5}$
+- $P(neg) = \frac{3}{5}$
+- $P(pos) = \frac{2}{5}$
 
 2. Calculate the likelihoods: $P(word | c)$. Given that $N_{neg}=14$, $N_{pos}=9$, $|V|=20$
 
 For example, for the word "predictable":
-    - $P(predictable | neg) = \frac{1 + 1}{14 + 20} = \frac{1}{17}$
-    - $P(predictable | pos) = \frac{0 + 1}{9 + 20} = \frac{1}{29}$
+
+- $P(predictable | neg) = \frac{1 + 1}{14 + 20} = \frac{1}{17}$
+- $P(predictable | pos) = \frac{0 + 1}{9 + 20} = \frac{1}{29}$
 
 ### :sparkles: Classifying the Test Sentence
 
