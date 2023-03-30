@@ -8,6 +8,10 @@
 - However, in order to tune the model's hyperparameters and make other decisions during the development process, we need another dataset to experiment on. 
 - This is where the development test set, or "devset," comes in.
 
+|![image](https://user-images.githubusercontent.com/19381768/228711049-bb6ac36a-170d-4205-80f0-478e35b79dd1.png)|
+|:--:|
+|Small dataset (top) and Big dataset (bottom)|
+
 ### Cross-validation
 The general rule is to train on the training set, tune on the devset, and report the final performance on the test set. 
 - This helps to avoid overfitting the model to the test set and gives a more conservative estimate of its performance. 
