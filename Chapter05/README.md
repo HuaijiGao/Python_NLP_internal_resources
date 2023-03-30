@@ -19,7 +19,7 @@ This is where cross-validation comes in.
 - We then pool the results over the splits to compute a final dev performance metric. 
 - This helps to address the issue of having limited data for training and dev, and gives a more robust estimate of the model's performance.
 
-### k-fold cross-validation
+### The k-fold cross-validation
 - To perform cross-validation, we typically split the data into k folds, with k typically ranging from 5 to 10. 
 - We then iterate through each fold, using it as the devset and the remaining k-1 folds as the training set. 
 - We train the model on the training set, evaluate its performance on the devset, and record the performance metric. 
@@ -27,10 +27,10 @@ This is where cross-validation comes in.
 
 |![image](https://user-images.githubusercontent.com/19381768/228710404-c93b39c9-68ad-4223-a12d-3a5cebbad23e.png)|
 |:--:|
-|k-fold cross validation|
-
+|The k-fold cross validation|
 
 ## Evaluation with more than two classes
+
 ## Generative and discriminative Classifiers
 ## Logistic regression
 ## Cross entropy loss
