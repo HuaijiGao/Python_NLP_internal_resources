@@ -13,16 +13,22 @@ The general rule is to train on the training set, tune on the devset, and report
 - This helps to avoid overfitting the model to the test set and gives a more conservative estimate of its performance. 
 - However, there is a paradox here: we want to use as much data as possible for training, but we also need a sizable devset to accurately evaluate the model's performance.
 
-This is where cross-validation comes in. With cross-validation, we perform multiple splits of the data into training and dev sets, train the model on each split, and evaluate its performance on the corresponding devset. We then pool the results over the splits to compute a final dev performance metric. This helps to address the issue of having limited data for training and dev, and gives a more robust estimate of the model's performance.
+This is where cross-validation comes in. 
+- With cross-validation, we perform multiple splits of the data into training and dev sets.
+- Train the model on each split, and evaluate its performance on the corresponding devset. 
+- We then pool the results over the splits to compute a final dev performance metric. 
+- This helps to address the issue of having limited data for training and dev, and gives a more robust estimate of the model's performance.
 
-To perform cross-validation, we typically split the data into k folds, with k typically ranging from 5 to 10. We then iterate through each fold, using it as the devset and the remaining k-1 folds as the training set. We train the model on the training set, evaluate its performance on the devset, and record the performance metric. We repeat this process for each fold, and then compute the average performance metric across all the folds.
+### k-fold cross-validation
+- To perform cross-validation, we typically split the data into k folds, with k typically ranging from 5 to 10. 
+- We then iterate through each fold, using it as the devset and the remaining k-1 folds as the training set. 
+- We train the model on the training set, evaluate its performance on the devset, and record the performance metric. 
+- We repeat this process for each fold, and then compute the average performance metric across all the folds.
 
 |![image](https://user-images.githubusercontent.com/19381768/228710404-c93b39c9-68ad-4223-a12d-3a5cebbad23e.png)|
 |:--:|
 |k-fold cross validation|
 
-
-In summary, using a devset and cross-validation are important steps in the development process of a machine learning model. They help to avoid overfitting and give a more accurate estimate of the model's performance. Cross-validation in particular allows us to make the most of limited data by performing multiple splits and pooling the results.
 
 ## Evaluation with more than two classes
 ## Generative and discriminative Classifiers
