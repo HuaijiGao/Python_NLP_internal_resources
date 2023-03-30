@@ -35,6 +35,38 @@ This is where cross-validation comes in.
 
 ## Evaluation with more than two classes
 
+### Confusion Matrix for 3-class Classification
+In machine learning, a confusion matrix is a table that is used to evaluate the performance of a classification model. It is especially useful when dealing with multi-class classification problems, such as when we have three classes. In this case, the confusion matrix will be a 3x3 table, with rows and columns corresponding to the three classes.
+
+- The confusion matrix is constructed by comparing the predicted labels of the model with the actual labels.
+- The cells of the table represent the number of instances that were classified correctly or incorrectly.
+- Specifically, the diagonal cells correspond to instances that were classified correctly, while the off-diagonal cells correspond to instances that were misclassified.
+
+Once we have the confusion matrix, we can compute various performance metrics, such as precision and recall, for each of the three classes. However, in order to get an overall performance metric for the model, we need to combine these metrics into a single number.
+
+There are two common ways to do this: macroaveraging and microaveraging. With macroaveraging, we compute the performance metric for each class separately, and then average over the classes. For example, we would compute the precision and recall for each of the three classes, and then take the average of these six numbers.
+
+With microaveraging, we collect the decisions for all classes into one confusion matrix, and then compute the precision and recall from that table. This means that we combine all the true positives, false positives, and false negatives across the three classes. We then compute the precision and recall based on these combined numbers.
+
+Let's look at some examples to see how this works. Suppose we have a 3-class classification problem, with classes A, B, and C. We train a model and evaluate its performance on a test set, and obtain the following confusion matrix:
+
+|        | A      | B      | C      |
+|--------|--------|--------|--------|
+| A      | 10     | 2      | 3      |
+| B      | 1      | 8      | 0      |
+| C      | 0      | 1      | 9      |
+
+To compute the precision and recall for each class, we look at the rows and columns of the confusion matrix. For example, the precision of class A is computed as TP_A / (TP_A + FP_A), where TP_A is the number of true positives for class A, and FP_A is the number of false positives for class A. Similarly, the recall of class A is computed as TP_A / (TP_A + FN_A), where FN_A is the number of false negatives for class A.
+
+Using these formulas, we can compute the precision and recall for each of the three classes. For example, the precision and recall for class A are:
+
+Precision_A = 10 / (10 + 2 + 3) = 0.625
+Recall_A = 10 / (10 + 1 + 0) = 0.909
+
+We can then compute the precision and recall for classes B and C in the same way. Once we have these six numbers, we can compute the macro-averaged precision and recall by taking their average, or the micro-averaged precision and recall by combining the true positives, false positives, and false negatives across all classes and computing the corresponding metrics.
+
+In summary, the confusion matrix is a useful tool for evaluating the performance of a classification model, especially when dealing with multi-class problems. To combine the precision and recall for multiple classes into a single metric, we can use macroaveraging or microaveraging, depending on our needs.
+
 ## Generative and discriminative Classifiers
 ## Logistic regression
 ## Cross entropy loss
